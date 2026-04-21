@@ -24,7 +24,6 @@ namespace CarServiceAdministration
         
         }
 
-        // UPDATE SERVICE
         private void AddCar_Click(object sender, EventArgs e)
         {
             var confirmResult = MessageBox.Show(
@@ -78,7 +77,6 @@ namespace CarServiceAdministration
             }
         }
 
-        // EXIT
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form1 menu = new Form1();
