@@ -34,23 +34,20 @@
             this.scheduleBookBox = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.date = new System.Windows.Forms.Label();
-            this.listBox4 = new System.Windows.Forms.ListBox();
             this.mechCB = new System.Windows.Forms.ComboBox();
             this.mechID = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.listBox3 = new System.Windows.Forms.ListBox();
             this.serviceCB = new System.Windows.Forms.ComboBox();
             this.ServiceID = new System.Windows.Forms.Label();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.carCB = new System.Windows.Forms.ComboBox();
-            this.carID = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.cusCB = new System.Windows.Forms.ComboBox();
+            this.txtSearch = new System.Windows.Forms.ListBox();
             this.cusID = new System.Windows.Forms.Label();
             this.bookCB = new System.Windows.Forms.ComboBox();
             this.BookID = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.grdCus = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             this.scheduleBookBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdCus)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -78,20 +75,16 @@
             // 
             // scheduleBookBox
             // 
+            this.scheduleBookBox.Controls.Add(this.grdCus);
+            this.scheduleBookBox.Controls.Add(this.btnSearch);
             this.scheduleBookBox.Controls.Add(this.button1);
             this.scheduleBookBox.Controls.Add(this.date);
-            this.scheduleBookBox.Controls.Add(this.listBox4);
             this.scheduleBookBox.Controls.Add(this.mechCB);
             this.scheduleBookBox.Controls.Add(this.mechID);
             this.scheduleBookBox.Controls.Add(this.dateTimePicker1);
-            this.scheduleBookBox.Controls.Add(this.listBox3);
             this.scheduleBookBox.Controls.Add(this.serviceCB);
             this.scheduleBookBox.Controls.Add(this.ServiceID);
-            this.scheduleBookBox.Controls.Add(this.listBox2);
-            this.scheduleBookBox.Controls.Add(this.carCB);
-            this.scheduleBookBox.Controls.Add(this.carID);
-            this.scheduleBookBox.Controls.Add(this.listBox1);
-            this.scheduleBookBox.Controls.Add(this.cusCB);
+            this.scheduleBookBox.Controls.Add(this.txtSearch);
             this.scheduleBookBox.Controls.Add(this.cusID);
             this.scheduleBookBox.Controls.Add(this.bookCB);
             this.scheduleBookBox.Controls.Add(this.BookID);
@@ -122,22 +115,12 @@
             // date
             // 
             this.date.AutoSize = true;
-            this.date.Location = new System.Drawing.Point(16, 290);
+            this.date.Location = new System.Drawing.Point(15, 355);
             this.date.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.date.Name = "date";
             this.date.Size = new System.Drawing.Size(43, 18);
             this.date.TabIndex = 26;
             this.date.Text = "Date:";
-            // 
-            // listBox4
-            // 
-            this.listBox4.FormattingEnabled = true;
-            this.listBox4.ItemHeight = 18;
-            this.listBox4.Location = new System.Drawing.Point(244, 236);
-            this.listBox4.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(220, 22);
-            this.listBox4.TabIndex = 25;
             // 
             // mechCB
             // 
@@ -146,7 +129,7 @@
             "1",
             "2",
             "3"});
-            this.mechCB.Location = new System.Drawing.Point(139, 236);
+            this.mechCB.Location = new System.Drawing.Point(455, 91);
             this.mechCB.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.mechCB.Name = "mechCB";
             this.mechCB.Size = new System.Drawing.Size(83, 26);
@@ -156,7 +139,7 @@
             // mechID
             // 
             this.mechID.AutoSize = true;
-            this.mechID.Location = new System.Drawing.Point(15, 238);
+            this.mechID.Location = new System.Drawing.Point(352, 99);
             this.mechID.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.mechID.Name = "mechID";
             this.mechID.Size = new System.Drawing.Size(94, 18);
@@ -165,23 +148,13 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(139, 284);
+            this.dateTimePicker1.Location = new System.Drawing.Point(72, 350);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.dateTimePicker1.MinDate = new System.DateTime(2025, 12, 7, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(312, 24);
             this.dateTimePicker1.TabIndex = 22;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
-            // 
-            // listBox3
-            // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.ItemHeight = 18;
-            this.listBox3.Location = new System.Drawing.Point(244, 189);
-            this.listBox3.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(187, 22);
-            this.listBox3.TabIndex = 21;
             // 
             // serviceCB
             // 
@@ -192,7 +165,7 @@
             "3",
             "4",
             "5"});
-            this.serviceCB.Location = new System.Drawing.Point(139, 189);
+            this.serviceCB.Location = new System.Drawing.Point(455, 50);
             this.serviceCB.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.serviceCB.Name = "serviceCB";
             this.serviceCB.Size = new System.Drawing.Size(83, 26);
@@ -202,70 +175,23 @@
             // ServiceID
             // 
             this.ServiceID.AutoSize = true;
-            this.ServiceID.Location = new System.Drawing.Point(15, 189);
+            this.ServiceID.Location = new System.Drawing.Point(352, 53);
             this.ServiceID.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.ServiceID.Name = "ServiceID";
             this.ServiceID.Size = new System.Drawing.Size(79, 18);
             this.ServiceID.TabIndex = 19;
             this.ServiceID.Text = "Service ID:";
             // 
-            // listBox2
+            // txtSearch
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 18;
-            this.listBox2.Location = new System.Drawing.Point(244, 144);
-            this.listBox2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(243, 22);
-            this.listBox2.TabIndex = 18;
-            this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
-            // 
-            // carCB
-            // 
-            this.carCB.FormattingEnabled = true;
-            this.carCB.Items.AddRange(new object[] {
-            "4",
-            "5"});
-            this.carCB.Location = new System.Drawing.Point(139, 144);
-            this.carCB.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.carCB.Name = "carCB";
-            this.carCB.Size = new System.Drawing.Size(83, 26);
-            this.carCB.TabIndex = 17;
-            this.carCB.SelectedIndexChanged += new System.EventHandler(this.carCB_SelectedIndexChanged);
-            // 
-            // carID
-            // 
-            this.carID.AutoSize = true;
-            this.carID.Location = new System.Drawing.Point(15, 146);
-            this.carID.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.carID.Name = "carID";
-            this.carID.Size = new System.Drawing.Size(54, 18);
-            this.carID.TabIndex = 16;
-            this.carID.Text = "Car ID:";
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 18;
-            this.listBox1.Location = new System.Drawing.Point(244, 98);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(220, 22);
-            this.listBox1.TabIndex = 15;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            // 
-            // cusCB
-            // 
-            this.cusCB.FormattingEnabled = true;
-            this.cusCB.Items.AddRange(new object[] {
-            "2",
-            "3"});
-            this.cusCB.Location = new System.Drawing.Point(139, 98);
-            this.cusCB.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.cusCB.Name = "cusCB";
-            this.cusCB.Size = new System.Drawing.Size(83, 26);
-            this.cusCB.TabIndex = 14;
-            this.cusCB.SelectedIndexChanged += new System.EventHandler(this.cusCB_SelectedIndexChanged);
+            this.txtSearch.FormattingEnabled = true;
+            this.txtSearch.ItemHeight = 18;
+            this.txtSearch.Location = new System.Drawing.Point(139, 99);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(83, 22);
+            this.txtSearch.TabIndex = 15;
+            this.txtSearch.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // cusID
             // 
@@ -300,6 +226,23 @@
             this.BookID.TabIndex = 11;
             this.BookID.Text = "Booking ID:";
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(238, 91);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(83, 41);
+            this.btnSearch.TabIndex = 28;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // grdCus
+            // 
+            this.grdCus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdCus.Location = new System.Drawing.Point(18, 152);
+            this.grdCus.Name = "grdCus";
+            this.grdCus.Size = new System.Drawing.Size(520, 150);
+            this.grdCus.TabIndex = 29;
+            // 
             // ScheduleBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -315,6 +258,7 @@
             this.menuStrip1.PerformLayout();
             this.scheduleBookBox.ResumeLayout(false);
             this.scheduleBookBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdCus)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -327,20 +271,16 @@
         private System.Windows.Forms.GroupBox scheduleBookBox;
         private System.Windows.Forms.ComboBox bookCB;
         private System.Windows.Forms.Label BookID;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ComboBox cusCB;
+        private System.Windows.Forms.ListBox txtSearch;
         private System.Windows.Forms.Label cusID;
-        private System.Windows.Forms.ComboBox carCB;
-        private System.Windows.Forms.Label carID;
         private System.Windows.Forms.Label ServiceID;
-        private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.ComboBox serviceCB;
-        private System.Windows.Forms.ListBox listBox3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label mechID;
-        private System.Windows.Forms.ListBox listBox4;
         private System.Windows.Forms.ComboBox mechCB;
         private System.Windows.Forms.Label date;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView grdCus;
+        private System.Windows.Forms.Button btnSearch;
     }
 }

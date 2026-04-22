@@ -41,18 +41,18 @@ namespace CarServiceAdministration
         {
             if (cusCB.SelectedIndex == 0)  
             {
-                listBox1.Items.Clear();  
+                txtSearch.Items.Clear();  
 
 
-                listBox1.Items.Add("Customer: Lisa Robins");
+                txtSearch.Items.Add("Customer: Lisa Robins");
 
 
             }
             else if (cusCB.SelectedIndex == 1)
             {
-                listBox1.Items.Clear();
+                txtSearch.Items.Clear();
 
-                listBox1.Items.Add("Customer: Johnathan Banks");
+                txtSearch.Items.Add("Customer: Johnathan Banks");
 
             }
         }
