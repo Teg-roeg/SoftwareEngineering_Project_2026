@@ -19,20 +19,7 @@ namespace CarServiceAdministration
 
         private void AddCar_Click(object sender, EventArgs e)
         {
-            var confirmResult = MessageBox.Show("Update Booking Details?",
-                       "Confirmation",
-                       MessageBoxButtons.YesNo);
-            if (confirmResult == DialogResult.Yes)
-            {
-                MessageBox.Show("Details Updates Succsesfully");
-                this.Controls.Clear();
-                this.InitializeComponent();
-                comboBox1.Focus();
-            }
-            else
-            {
-                return;
-            }
+
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -40,16 +27,6 @@ namespace CarServiceAdministration
             Form1 menu = new Form1();
             menu.Show();
             this.Close();
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void mechCB_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

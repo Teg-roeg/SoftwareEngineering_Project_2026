@@ -30,54 +30,79 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateBooking));
             this.cusBox = new System.Windows.Forms.GroupBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.grdCars = new System.Windows.Forms.DataGridView();
             this.date = new System.Windows.Forms.Label();
             this.mechCB = new System.Windows.Forms.ComboBox();
             this.mechID = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.serviceCB = new System.Windows.Forms.ComboBox();
             this.ServiceID = new System.Windows.Forms.Label();
-            this.carCB = new System.Windows.Forms.ComboBox();
-            this.carID = new System.Windows.Forms.Label();
-            this.cusCB = new System.Windows.Forms.ComboBox();
             this.cusID = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.AddCar = new System.Windows.Forms.Button();
+            this.bookIDBox = new System.Windows.Forms.ComboBox();
+            this.btnUpdateBooking = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cusBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdCars)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cusBox
             // 
+            this.cusBox.Controls.Add(this.btnSearch);
+            this.cusBox.Controls.Add(this.txtSearch);
+            this.cusBox.Controls.Add(this.grdCars);
             this.cusBox.Controls.Add(this.date);
             this.cusBox.Controls.Add(this.mechCB);
             this.cusBox.Controls.Add(this.mechID);
             this.cusBox.Controls.Add(this.dateTimePicker1);
             this.cusBox.Controls.Add(this.serviceCB);
             this.cusBox.Controls.Add(this.ServiceID);
-            this.cusBox.Controls.Add(this.carCB);
-            this.cusBox.Controls.Add(this.carID);
-            this.cusBox.Controls.Add(this.cusCB);
             this.cusBox.Controls.Add(this.cusID);
             this.cusBox.Controls.Add(this.label1);
-            this.cusBox.Controls.Add(this.comboBox1);
-            this.cusBox.Controls.Add(this.AddCar);
+            this.cusBox.Controls.Add(this.bookIDBox);
+            this.cusBox.Controls.Add(this.btnUpdateBooking);
             this.cusBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cusBox.Location = new System.Drawing.Point(17, 41);
-            this.cusBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cusBox.Location = new System.Drawing.Point(17, 26);
+            this.cusBox.Margin = new System.Windows.Forms.Padding(2);
             this.cusBox.Name = "cusBox";
-            this.cusBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.cusBox.Size = new System.Drawing.Size(673, 206);
+            this.cusBox.Padding = new System.Windows.Forms.Padding(2);
+            this.cusBox.Size = new System.Drawing.Size(673, 289);
             this.cusBox.TabIndex = 15;
             this.cusBox.TabStop = false;
             this.cusBox.Text = "Update Booking Details";
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(225, 89);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(82, 48);
+            this.btnSearch.TabIndex = 39;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(124, 89);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(82, 24);
+            this.txtSearch.TabIndex = 38;
+            // 
+            // grdCars
+            // 
+            this.grdCars.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdCars.Location = new System.Drawing.Point(28, 143);
+            this.grdCars.Name = "grdCars";
+            this.grdCars.Size = new System.Drawing.Size(396, 60);
+            this.grdCars.TabIndex = 37;
+            // 
             // date
             // 
             this.date.AutoSize = true;
-            this.date.Location = new System.Drawing.Point(24, 150);
+            this.date.Location = new System.Drawing.Point(24, 247);
             this.date.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.date.Name = "date";
             this.date.Size = new System.Drawing.Size(44, 20);
@@ -91,17 +116,16 @@
             "1",
             "2",
             "3"});
-            this.mechCB.Location = new System.Drawing.Point(566, 40);
-            this.mechCB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mechCB.Location = new System.Drawing.Point(436, 86);
+            this.mechCB.Margin = new System.Windows.Forms.Padding(2);
             this.mechCB.Name = "mechCB";
             this.mechCB.Size = new System.Drawing.Size(83, 27);
             this.mechCB.TabIndex = 35;
-            this.mechCB.SelectedIndexChanged += new System.EventHandler(this.mechCB_SelectedIndexChanged);
             // 
             // mechID
             // 
             this.mechID.AutoSize = true;
-            this.mechID.Location = new System.Drawing.Point(470, 43);
+            this.mechID.Location = new System.Drawing.Point(334, 89);
             this.mechID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.mechID.Name = "mechID";
             this.mechID.Size = new System.Drawing.Size(97, 20);
@@ -110,8 +134,8 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(123, 147);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Location = new System.Drawing.Point(72, 243);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.MinDate = new System.DateTime(2025, 12, 7, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(312, 24);
@@ -126,8 +150,8 @@
             "3",
             "4",
             "5"});
-            this.serviceCB.Location = new System.Drawing.Point(337, 91);
-            this.serviceCB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.serviceCB.Location = new System.Drawing.Point(436, 36);
+            this.serviceCB.Margin = new System.Windows.Forms.Padding(2);
             this.serviceCB.Name = "serviceCB";
             this.serviceCB.Size = new System.Drawing.Size(83, 27);
             this.serviceCB.TabIndex = 32;
@@ -135,51 +159,17 @@
             // ServiceID
             // 
             this.ServiceID.AutoSize = true;
-            this.ServiceID.Location = new System.Drawing.Point(259, 89);
+            this.ServiceID.Location = new System.Drawing.Point(334, 43);
             this.ServiceID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ServiceID.Name = "ServiceID";
             this.ServiceID.Size = new System.Drawing.Size(78, 20);
             this.ServiceID.TabIndex = 31;
             this.ServiceID.Text = "Service ID:";
             // 
-            // carCB
-            // 
-            this.carCB.FormattingEnabled = true;
-            this.carCB.Items.AddRange(new object[] {
-            "4",
-            "5"});
-            this.carCB.Location = new System.Drawing.Point(337, 43);
-            this.carCB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.carCB.Name = "carCB";
-            this.carCB.Size = new System.Drawing.Size(83, 27);
-            this.carCB.TabIndex = 30;
-            // 
-            // carID
-            // 
-            this.carID.AutoSize = true;
-            this.carID.Location = new System.Drawing.Point(259, 47);
-            this.carID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.carID.Name = "carID";
-            this.carID.Size = new System.Drawing.Size(53, 20);
-            this.carID.TabIndex = 29;
-            this.carID.Text = "Car ID:";
-            // 
-            // cusCB
-            // 
-            this.cusCB.FormattingEnabled = true;
-            this.cusCB.Items.AddRange(new object[] {
-            "2",
-            "3"});
-            this.cusCB.Location = new System.Drawing.Point(123, 89);
-            this.cusCB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.cusCB.Name = "cusCB";
-            this.cusCB.Size = new System.Drawing.Size(83, 27);
-            this.cusCB.TabIndex = 28;
-            // 
             // cusID
             // 
             this.cusID.AutoSize = true;
-            this.cusID.Location = new System.Drawing.Point(24, 93);
+            this.cusID.Location = new System.Drawing.Point(24, 89);
             this.cusID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.cusID.Name = "cusID";
             this.cusID.Size = new System.Drawing.Size(95, 20);
@@ -189,39 +179,32 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 51);
+            this.label1.Location = new System.Drawing.Point(24, 43);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 20);
             this.label1.TabIndex = 14;
             this.label1.Text = "Booking ID:";
             // 
-            // comboBox1
+            // bookIDBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "1",
-            "2"});
-            this.comboBox1.Location = new System.Drawing.Point(123, 47);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(83, 27);
-            this.comboBox1.TabIndex = 11;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.bookIDBox.Location = new System.Drawing.Point(124, 43);
+            this.bookIDBox.Name = "bookIDBox";
+            this.bookIDBox.Size = new System.Drawing.Size(82, 27);
+            this.bookIDBox.TabIndex = 40;
             // 
-            // AddCar
+            // btnUpdateBooking
             // 
-            this.AddCar.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.AddCar.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddCar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.AddCar.Location = new System.Drawing.Point(445, 131);
-            this.AddCar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.AddCar.Name = "AddCar";
-            this.AddCar.Size = new System.Drawing.Size(215, 53);
-            this.AddCar.TabIndex = 6;
-            this.AddCar.Text = "Update Booking";
-            this.AddCar.UseVisualStyleBackColor = false;
-            this.AddCar.Click += new System.EventHandler(this.AddCar_Click);
+            this.btnUpdateBooking.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnUpdateBooking.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateBooking.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnUpdateBooking.Location = new System.Drawing.Point(436, 227);
+            this.btnUpdateBooking.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdateBooking.Name = "btnUpdateBooking";
+            this.btnUpdateBooking.Size = new System.Drawing.Size(215, 53);
+            this.btnUpdateBooking.TabIndex = 6;
+            this.btnUpdateBooking.Text = "Update Booking";
+            this.btnUpdateBooking.UseVisualStyleBackColor = false;
             // 
             // menuStrip1
             // 
@@ -250,15 +233,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(703, 259);
+            this.ClientSize = new System.Drawing.Size(703, 326);
             this.Controls.Add(this.cusBox);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UpdateBooking";
             this.Text = "UpdateBooking";
             this.cusBox.ResumeLayout(false);
             this.cusBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdCars)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -270,8 +254,8 @@
 
         private System.Windows.Forms.GroupBox cusBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button AddCar;
+        private System.Windows.Forms.ComboBox bookIDBox;
+        private System.Windows.Forms.Button btnUpdateBooking;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Label date;
@@ -280,9 +264,9 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox serviceCB;
         private System.Windows.Forms.Label ServiceID;
-        private System.Windows.Forms.ComboBox carCB;
-        private System.Windows.Forms.Label carID;
-        private System.Windows.Forms.ComboBox cusCB;
         private System.Windows.Forms.Label cusID;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.DataGridView grdCars;
     }
 }
