@@ -33,13 +33,12 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.listStatus = new System.Windows.Forms.ListBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.detailsLbl = new System.Windows.Forms.Label();
             this.BookIdLbl = new System.Windows.Forms.Label();
-            this.statusLbl = new System.Windows.Forms.Label();
-            this.listBookInfoBox = new System.Windows.Forms.ListBox();
             this.listBookBox = new System.Windows.Forms.ListBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.oracleCommand1 = new Oracle.ManagedDataAccess.Client.OracleCommand();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -70,33 +69,28 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.listStatus);
+            this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.detailsLbl);
             this.groupBox1.Controls.Add(this.BookIdLbl);
-            this.groupBox1.Controls.Add(this.statusLbl);
-            this.groupBox1.Controls.Add(this.listBookInfoBox);
             this.groupBox1.Controls.Add(this.listBookBox);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.85714F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(14, 33);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(580, 445);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "View Booking";
             // 
-            // listStatus
+            // comboBox1
             // 
-            this.listStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.85714F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listStatus.FormattingEnabled = true;
-            this.listStatus.ItemHeight = 25;
-            this.listStatus.Location = new System.Drawing.Point(201, 379);
-            this.listStatus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.listStatus.Name = "listStatus";
-            this.listStatus.Size = new System.Drawing.Size(168, 29);
-            this.listStatus.TabIndex = 5;
-            this.listStatus.SelectedIndexChanged += new System.EventHandler(this.listStatus_SelectedIndexChanged);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(22, 98);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(99, 33);
+            this.comboBox1.TabIndex = 5;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBoxBookingIDs_SelectedIndexChanged);
             // 
             // detailsLbl
             // 
@@ -118,41 +112,17 @@
             this.BookIdLbl.TabIndex = 3;
             this.BookIdLbl.Text = "Book ID";
             // 
-            // statusLbl
-            // 
-            this.statusLbl.AutoSize = true;
-            this.statusLbl.Location = new System.Drawing.Point(130, 379);
-            this.statusLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.statusLbl.Name = "statusLbl";
-            this.statusLbl.Size = new System.Drawing.Size(74, 26);
-            this.statusLbl.TabIndex = 2;
-            this.statusLbl.Text = "Status";
-            // 
-            // listBookInfoBox
-            // 
-            this.listBookInfoBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBookInfoBox.FormattingEnabled = true;
-            this.listBookInfoBox.ItemHeight = 20;
-            this.listBookInfoBox.Location = new System.Drawing.Point(134, 98);
-            this.listBookInfoBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.listBookInfoBox.Name = "listBookInfoBox";
-            this.listBookInfoBox.Size = new System.Drawing.Size(423, 264);
-            this.listBookInfoBox.TabIndex = 1;
-            this.listBookInfoBox.SelectedIndexChanged += new System.EventHandler(this.listBookInfoBox_SelectedIndexChanged);
-            // 
             // listBookBox
             // 
-            this.listBookBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.85714F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBookBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBookBox.FormattingEnabled = true;
-            this.listBookBox.ItemHeight = 25;
-            this.listBookBox.Location = new System.Drawing.Point(21, 98);
-            this.listBookBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBookBox.ItemHeight = 20;
+            this.listBookBox.Location = new System.Drawing.Point(134, 98);
+            this.listBookBox.Margin = new System.Windows.Forms.Padding(2);
             this.listBookBox.Name = "listBookBox";
-            this.listBookBox.Size = new System.Drawing.Size(102, 254);
-            this.listBookBox.TabIndex = 0;
-            this.listBookBox.Click += new System.EventHandler(this.listBookBox_Click);
+            this.listBookBox.Size = new System.Drawing.Size(423, 264);
+            this.listBookBox.TabIndex = 1;
             this.listBookBox.SelectedIndexChanged += new System.EventHandler(this.listBookBox_SelectedIndexChanged);
-            this.listBookBox.Leave += new System.EventHandler(this.listBookBox_Leave);
             // 
             // ViewBookings
             // 
@@ -162,7 +132,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ViewBookings";
             this.Text = "ViewBookings";
             this.Load += new System.EventHandler(this.ViewBookings_Load);
@@ -181,12 +151,11 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListBox listBookBox;
         private System.Windows.Forms.BindingSource bindingSource1;
-        private System.Windows.Forms.ListBox listBookInfoBox;
-        private System.Windows.Forms.Label statusLbl;
-        private System.Windows.Forms.ListBox listStatus;
+        private System.Windows.Forms.ListBox listBookBox;
         private System.Windows.Forms.Label detailsLbl;
         private System.Windows.Forms.Label BookIdLbl;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private Oracle.ManagedDataAccess.Client.OracleCommand oracleCommand1;
     }
 }
