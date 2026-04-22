@@ -39,12 +39,14 @@
             this.CusID = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.euroLbl = new System.Windows.Forms.Label();
             this.cusBox.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cusBox
             // 
+            this.cusBox.Controls.Add(this.euroLbl);
             this.cusBox.Controls.Add(this.txtPrice);
             this.cusBox.Controls.Add(this.AddCar);
             this.cusBox.Controls.Add(this.CusPhoneNum);
@@ -158,6 +160,16 @@
             this.exitToolStripMenuItem.Text = "Back";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
+            // euroLbl
+            // 
+            this.euroLbl.AutoSize = true;
+            this.euroLbl.Location = new System.Drawing.Point(267, 186);
+            this.euroLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.euroLbl.Name = "euroLbl";
+            this.euroLbl.Size = new System.Drawing.Size(19, 21);
+            this.euroLbl.TabIndex = 12;
+            this.euroLbl.Text = "€";
+            // 
             // RegService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -190,5 +202,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.Label euroLbl;
     }
 }
