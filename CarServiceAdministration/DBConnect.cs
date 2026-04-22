@@ -1,15 +1,38 @@
-﻿namespace CarServiceAdministration
+﻿using Oracle.ManagedDataAccess.Client;
+using System;
+using System.IO;
+
+namespace CarServiceAdministration
 {
 
 
     namespace DBConnect
     {
+
         class Database
         {
-            public const string connectionString = "Data Source = oracle/orcl; " +
-                                                   "User Id = T00262291; " +
-                                                   "Password = gyqc4Dk*9prh;";
+            public static string connectionString;
+            static Database()
+            {
+                try
+                {
+                    string userProfilePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+                    string filePath = Path.Combine(
+                    userProfilePath + "\\OneDrive - Munster Technological University","Documents","OracleConnectionStringMTU.txt");
 
+                    if (!File.Exists(filePath))
+                    {
+                        Console.WriteLine($"File not found: {filePath}");
+                        return;
+                    }
+
+                    connectionString = File.ReadAllText(filePath);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error reading connection string: {ex.Message}");
+                }
+            }
         }
     }
-}
+ }
