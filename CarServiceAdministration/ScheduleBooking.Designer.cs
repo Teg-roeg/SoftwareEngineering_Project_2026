@@ -165,7 +165,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(113, 287);
+            this.dateTimePicker1.Location = new System.Drawing.Point(139, 284);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.dateTimePicker1.MinDate = new System.DateTime(2025, 12, 7, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";

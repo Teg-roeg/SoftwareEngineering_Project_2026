@@ -19,7 +19,7 @@ namespace CarServiceAdministration
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedIndex == 0)
+            if (CarIDBox.SelectedIndex == 0)
             {
                 listCarBox.Items.Clear();
 
@@ -30,7 +30,7 @@ namespace CarServiceAdministration
                 listCarBox.Items.Add("Model: Celica");
                 listCarBox.Items.Add("Year: 2002");
             }
-            else if (comboBox1.SelectedIndex == 1)
+            else if (CarIDBox.SelectedIndex == 1)
             {
                 listCarBox.Items.Clear();
 
@@ -57,7 +57,7 @@ namespace CarServiceAdministration
             {
                 this.Controls.Clear();
                 this.InitializeComponent();
-                comboBox1.Focus();
+                CarIDBox.Focus();
             }
             else
             {
@@ -70,6 +70,11 @@ namespace CarServiceAdministration
             Form1 menu = new Form1();
             menu.Show();
             this.Close();
+        }
+
+        private void RmvCar_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
