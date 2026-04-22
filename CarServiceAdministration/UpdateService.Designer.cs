@@ -415,6 +415,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UpdateService";
             this.Text = "UpdateService";
+            this.Load += new System.EventHandler(this.UpdateService_Load);
             this.cusBox.ResumeLayout(false);
             this.cusBox.PerformLayout();
             this.menuStrip1.ResumeLayout(false);

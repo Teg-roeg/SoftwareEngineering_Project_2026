@@ -71,5 +71,9 @@ namespace CarServiceAdministration
             this.Close();
         }
 
+        private void listServBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

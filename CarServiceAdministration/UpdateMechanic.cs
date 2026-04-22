@@ -60,7 +60,6 @@ namespace CarServiceAdministration
             if (confirmResult != DialogResult.Yes)
                 return;
 
-            // Safe ID retrieval
             if (MechIDBox.SelectedItem == null ||
                 !(MechIDBox.SelectedItem is DataRowView row))
             {

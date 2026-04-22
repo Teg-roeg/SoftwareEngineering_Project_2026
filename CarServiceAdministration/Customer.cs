@@ -54,11 +54,7 @@ namespace CarServiceAdministration
             using (OracleConnection con = new OracleConnection(Database.connectionString))
             {
                 con.Open();
-                string query = @"
-            SELECT CusID, Name, PhoneNum 
-            FROM Customers 
-            WHERE Name LIKE :input OR TO_CHAR(CusID) LIKE :input
-            ORDER BY Name";
+                string query = @"SELECT CusID, Name, PhoneNum FROM Customers  WHERE Name LIKE :input OR TO_CHAR(CusID) LIKE :input ORDER BY Name";
                 using (OracleCommand cmd = new OracleCommand(query, con))
                 {
                     cmd.Parameters.Add(":input", "%" + input + "%");

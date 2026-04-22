@@ -15,9 +15,33 @@ namespace CarServiceAdministration
 
         private void UpdateService_Load(object sender, EventArgs e)
         {
+            using (OracleConnection con =
+         new OracleConnection(Database.connectionString))
+            {
+                try
+                {
+                    con.Open();
 
+                    string query = "SELECT SerID FROM Services";
+
+                    using (OracleCommand cmd = new OracleCommand(query, con))
+                    {
+                        OracleDataReader reader = cmd.ExecuteReader();
+
+                        DataTable dt = new DataTable();
+                        dt.Load(reader);
+
+                        SerIDBox.DataSource = dt;
+                        SerIDBox.DisplayMember = "SerID";
+                        SerIDBox.ValueMember = "SerID";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading Service IDs: " + ex.Message);
+                }
+            }
         }
-
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {

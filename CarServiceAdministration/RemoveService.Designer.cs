@@ -105,6 +105,7 @@
             this.listServBox.Name = "listServBox";
             this.listServBox.Size = new System.Drawing.Size(314, 80);
             this.listServBox.TabIndex = 13;
+            this.listServBox.SelectedIndexChanged += new System.EventHandler(this.listServBox_SelectedIndexChanged);
             // 
             // comboBox1
             // 
