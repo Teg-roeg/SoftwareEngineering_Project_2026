@@ -79,7 +79,6 @@
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.Menu;
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(28, 28);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mechanicToolStripMenuItem,
@@ -92,7 +91,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(11, 4, 0, 4);
-            this.menuStrip1.Size = new System.Drawing.Size(1473, 39);
+            this.menuStrip1.Size = new System.Drawing.Size(1473, 28);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -106,7 +105,7 @@
             this.mechanicToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mechanicToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.mechanicToolStripMenuItem.Name = "mechanicToolStripMenuItem";
-            this.mechanicToolStripMenuItem.Size = new System.Drawing.Size(127, 31);
+            this.mechanicToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.mechanicToolStripMenuItem.Text = "Mechanic";
             this.mechanicToolStripMenuItem.Click += new System.EventHandler(this.mechanicToolStripMenuItem_Click);
             // 
@@ -115,7 +114,7 @@
             this.regMechanicToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.regMechanicToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.regMechanicToolStripMenuItem.Name = "regMechanicToolStripMenuItem";
-            this.regMechanicToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.regMechanicToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.regMechanicToolStripMenuItem.Text = "Reg Mechanic";
             this.regMechanicToolStripMenuItem.Click += new System.EventHandler(this.regMechanicToolStripMenuItem_Click);
             // 
@@ -124,7 +123,7 @@
             this.updateMechanicToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.updateMechanicToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.updateMechanicToolStripMenuItem.Name = "updateMechanicToolStripMenuItem";
-            this.updateMechanicToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.updateMechanicToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.updateMechanicToolStripMenuItem.Text = "Update Mechanic";
             this.updateMechanicToolStripMenuItem.Click += new System.EventHandler(this.updateMechanicToolStripMenuItem_Click);
             // 
@@ -133,7 +132,7 @@
             this.removeMechanicToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.removeMechanicToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.removeMechanicToolStripMenuItem.Name = "removeMechanicToolStripMenuItem";
-            this.removeMechanicToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.removeMechanicToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.removeMechanicToolStripMenuItem.Text = "Remove Mechanic";
             this.removeMechanicToolStripMenuItem.Click += new System.EventHandler(this.removeMechanicToolStripMenuItem_Click);
             // 
@@ -146,7 +145,7 @@
             this.carToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.carToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.carToolStripMenuItem.Name = "carToolStripMenuItem";
-            this.carToolStripMenuItem.Size = new System.Drawing.Size(63, 31);
+            this.carToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.carToolStripMenuItem.Text = "Car";
             this.carToolStripMenuItem.Click += new System.EventHandler(this.carToolStripMenuItem_Click);
             // 
@@ -155,7 +154,7 @@
             this.regCarToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.regCarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.regCarToolStripMenuItem.Name = "regCarToolStripMenuItem";
-            this.regCarToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.regCarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.regCarToolStripMenuItem.Text = "Reg Car";
             this.regCarToolStripMenuItem.Click += new System.EventHandler(this.regCarToolStripMenuItem_Click);
             // 
@@ -164,7 +163,7 @@
             this.updateCarToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.updateCarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.updateCarToolStripMenuItem.Name = "updateCarToolStripMenuItem";
-            this.updateCarToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.updateCarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.updateCarToolStripMenuItem.Text = "Update Car";
             this.updateCarToolStripMenuItem.Click += new System.EventHandler(this.updateCarToolStripMenuItem_Click);
             // 
@@ -173,7 +172,7 @@
             this.removeCarToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.removeCarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.removeCarToolStripMenuItem.Name = "removeCarToolStripMenuItem";
-            this.removeCarToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.removeCarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.removeCarToolStripMenuItem.Text = "Remove Car";
             this.removeCarToolStripMenuItem.Click += new System.EventHandler(this.removeCarToolStripMenuItem_Click);
             // 
@@ -186,7 +185,7 @@
             this.customerToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customerToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
-            this.customerToolStripMenuItem.Size = new System.Drawing.Size(102, 31);
+            this.customerToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
             this.customerToolStripMenuItem.Text = "Service";
             this.customerToolStripMenuItem.Click += new System.EventHandler(this.customerToolStripMenuItem_Click);
             // 
@@ -195,7 +194,7 @@
             this.regServiceToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.regServiceToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.regServiceToolStripMenuItem.Name = "regServiceToolStripMenuItem";
-            this.regServiceToolStripMenuItem.Size = new System.Drawing.Size(290, 40);
+            this.regServiceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.regServiceToolStripMenuItem.Text = "Reg Service";
             this.regServiceToolStripMenuItem.Click += new System.EventHandler(this.regServiceToolStripMenuItem_Click);
             // 
@@ -204,7 +203,7 @@
             this.updateServiceToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.updateServiceToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.updateServiceToolStripMenuItem.Name = "updateServiceToolStripMenuItem";
-            this.updateServiceToolStripMenuItem.Size = new System.Drawing.Size(290, 40);
+            this.updateServiceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.updateServiceToolStripMenuItem.Text = "Update Service";
             this.updateServiceToolStripMenuItem.Click += new System.EventHandler(this.updateServiceToolStripMenuItem_Click);
             // 
@@ -213,7 +212,7 @@
             this.removeServiceToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.removeServiceToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.removeServiceToolStripMenuItem.Name = "removeServiceToolStripMenuItem";
-            this.removeServiceToolStripMenuItem.Size = new System.Drawing.Size(290, 40);
+            this.removeServiceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.removeServiceToolStripMenuItem.Text = "Remove Service";
             this.removeServiceToolStripMenuItem.Click += new System.EventHandler(this.removeServiceToolStripMenuItem_Click);
             // 
@@ -226,7 +225,7 @@
             this.serviceToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.serviceToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.serviceToolStripMenuItem.Name = "serviceToolStripMenuItem";
-            this.serviceToolStripMenuItem.Size = new System.Drawing.Size(127, 31);
+            this.serviceToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
             this.serviceToolStripMenuItem.Text = "Customer";
             this.serviceToolStripMenuItem.Click += new System.EventHandler(this.serviceToolStripMenuItem_Click);
             // 
@@ -235,7 +234,7 @@
             this.regCustomerToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.regCustomerToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.regCustomerToolStripMenuItem.Name = "regCustomerToolStripMenuItem";
-            this.regCustomerToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.regCustomerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.regCustomerToolStripMenuItem.Text = "Reg Customer";
             this.regCustomerToolStripMenuItem.Click += new System.EventHandler(this.regCustomerToolStripMenuItem_Click);
             // 
@@ -244,7 +243,7 @@
             this.updateCustomerToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.updateCustomerToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.updateCustomerToolStripMenuItem.Name = "updateCustomerToolStripMenuItem";
-            this.updateCustomerToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.updateCustomerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.updateCustomerToolStripMenuItem.Text = "Update Customer";
             this.updateCustomerToolStripMenuItem.Click += new System.EventHandler(this.updateCustomerToolStripMenuItem_Click);
             // 
@@ -253,7 +252,7 @@
             this.removeCustomerToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.removeCustomerToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.removeCustomerToolStripMenuItem.Name = "removeCustomerToolStripMenuItem";
-            this.removeCustomerToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.removeCustomerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.removeCustomerToolStripMenuItem.Text = "Remove Customer";
             this.removeCustomerToolStripMenuItem.Click += new System.EventHandler(this.removeCustomerToolStripMenuItem_Click);
             // 
@@ -267,7 +266,7 @@
             this.bookingToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bookingToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.bookingToolStripMenuItem.Name = "bookingToolStripMenuItem";
-            this.bookingToolStripMenuItem.Size = new System.Drawing.Size(114, 31);
+            this.bookingToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.bookingToolStripMenuItem.Text = "Booking";
             this.bookingToolStripMenuItem.Click += new System.EventHandler(this.bookingToolStripMenuItem_Click);
             // 
@@ -276,7 +275,7 @@
             this.scheduleBookingToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.scheduleBookingToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.scheduleBookingToolStripMenuItem.Name = "scheduleBookingToolStripMenuItem";
-            this.scheduleBookingToolStripMenuItem.Size = new System.Drawing.Size(310, 40);
+            this.scheduleBookingToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.scheduleBookingToolStripMenuItem.Text = "Schedule Booking";
             this.scheduleBookingToolStripMenuItem.Click += new System.EventHandler(this.scheduleBookingToolStripMenuItem_Click);
             // 
@@ -285,7 +284,7 @@
             this.updateBookingToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.updateBookingToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.updateBookingToolStripMenuItem.Name = "updateBookingToolStripMenuItem";
-            this.updateBookingToolStripMenuItem.Size = new System.Drawing.Size(310, 40);
+            this.updateBookingToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.updateBookingToolStripMenuItem.Text = "Update Booking";
             this.updateBookingToolStripMenuItem.Click += new System.EventHandler(this.updateBookingToolStripMenuItem_Click);
             // 
@@ -294,7 +293,7 @@
             this.cancelBookingToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cancelBookingToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.cancelBookingToolStripMenuItem.Name = "cancelBookingToolStripMenuItem";
-            this.cancelBookingToolStripMenuItem.Size = new System.Drawing.Size(310, 40);
+            this.cancelBookingToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.cancelBookingToolStripMenuItem.Text = "Cancel Booking";
             this.cancelBookingToolStripMenuItem.Click += new System.EventHandler(this.cancelBookingToolStripMenuItem_Click);
             // 
@@ -303,7 +302,7 @@
             this.viewBookingToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.viewBookingToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.viewBookingToolStripMenuItem.Name = "viewBookingToolStripMenuItem";
-            this.viewBookingToolStripMenuItem.Size = new System.Drawing.Size(310, 40);
+            this.viewBookingToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.viewBookingToolStripMenuItem.Text = "View Booking";
             this.viewBookingToolStripMenuItem.Click += new System.EventHandler(this.viewBookingToolStripMenuItem_Click);
             // 
@@ -316,7 +315,7 @@
             this.adminToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adminToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(97, 31);
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.adminToolStripMenuItem.Text = "Admin";
             this.adminToolStripMenuItem.Click += new System.EventHandler(this.adminToolStripMenuItem_Click);
             // 
@@ -325,7 +324,7 @@
             this.generateInvoiceToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.generateInvoiceToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.generateInvoiceToolStripMenuItem.Name = "generateInvoiceToolStripMenuItem";
-            this.generateInvoiceToolStripMenuItem.Size = new System.Drawing.Size(397, 40);
+            this.generateInvoiceToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.generateInvoiceToolStripMenuItem.Text = "Generate Invoice";
             this.generateInvoiceToolStripMenuItem.Click += new System.EventHandler(this.generateInvoiceToolStripMenuItem_Click);
             // 
@@ -334,7 +333,7 @@
             this.recordPaymentToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.recordPaymentToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.recordPaymentToolStripMenuItem.Name = "recordPaymentToolStripMenuItem";
-            this.recordPaymentToolStripMenuItem.Size = new System.Drawing.Size(397, 40);
+            this.recordPaymentToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.recordPaymentToolStripMenuItem.Text = "Record Payment";
             this.recordPaymentToolStripMenuItem.Click += new System.EventHandler(this.recordPaymentToolStripMenuItem_Click);
             // 
@@ -343,7 +342,7 @@
             this.monthlyRevenueAnalysisToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.monthlyRevenueAnalysisToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.monthlyRevenueAnalysisToolStripMenuItem.Name = "monthlyRevenueAnalysisToolStripMenuItem";
-            this.monthlyRevenueAnalysisToolStripMenuItem.Size = new System.Drawing.Size(397, 40);
+            this.monthlyRevenueAnalysisToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.monthlyRevenueAnalysisToolStripMenuItem.Text = "Monthly Revenue Analysis";
             this.monthlyRevenueAnalysisToolStripMenuItem.Click += new System.EventHandler(this.monthlyRevenueAnalysisToolStripMenuItem_Click);
             // 
@@ -354,7 +353,7 @@
             this.exitToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(67, 31);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -386,7 +385,7 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 26F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;

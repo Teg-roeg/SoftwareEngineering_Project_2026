@@ -155,5 +155,10 @@ namespace CarServiceAdministration
         {
 
         }
+
+        private void monthlyRevenueAnalysisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
