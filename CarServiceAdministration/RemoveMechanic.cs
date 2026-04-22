@@ -139,5 +139,10 @@ namespace CarServiceAdministration
         {
 
         }
+
+        private void mechBox_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

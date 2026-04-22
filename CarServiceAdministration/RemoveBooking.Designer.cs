@@ -86,9 +86,6 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "1",
-            "2"});
             this.comboBox1.Location = new System.Drawing.Point(141, 44);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox1.Name = "comboBox1";
@@ -154,6 +151,7 @@
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "RemoveBooking";
             this.Text = "RemoveBooking";
+            this.Load += new System.EventHandler(this.RemoveBooking_Load);
             this.bookBox.ResumeLayout(false);
             this.bookBox.PerformLayout();
             this.menuStrip1.ResumeLayout(false);

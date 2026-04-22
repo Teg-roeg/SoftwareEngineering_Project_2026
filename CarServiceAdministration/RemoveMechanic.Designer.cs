@@ -57,6 +57,7 @@
             this.mechBox.TabIndex = 7;
             this.mechBox.TabStop = false;
             this.mechBox.Text = "Remove Mechanic Details ";
+            this.mechBox.Enter += new System.EventHandler(this.mechBox_Enter);
             // 
             // button1
             // 
