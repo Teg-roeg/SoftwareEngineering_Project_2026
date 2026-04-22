@@ -83,6 +83,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Customer.cs" />
     <Compile Include="DBConnect.cs" />
     <Compile Include="GenerateInvoice.cs">
       <SubType>Form</SubType>

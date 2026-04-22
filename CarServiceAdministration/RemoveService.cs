@@ -71,9 +71,5 @@ namespace CarServiceAdministration
             this.Close();
         }
 
-        private void regServiceToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

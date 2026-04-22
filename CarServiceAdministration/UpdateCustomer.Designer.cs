@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateCustomer));
             this.cusBox = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.AddCar = new System.Windows.Forms.Button();
             this.CusName = new System.Windows.Forms.Label();
             this.CusID = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -60,20 +59,26 @@
             this.recordPaymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.monthlyRevenueAnalysisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nameCusBox = new System.Windows.Forms.TextBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.numCusBox = new System.Windows.Forms.TextBox();
-            this.CusIDBox = new System.Windows.Forms.ComboBox();
+            this.nameCusBox = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnUpdateCustomer = new System.Windows.Forms.Button();
+            this.grdCustomers = new System.Windows.Forms.DataGridView();
             this.cusBox.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdCustomers)).BeginInit();
             this.SuspendLayout();
             // 
             // cusBox
             // 
-            this.cusBox.Controls.Add(this.CusIDBox);
-            this.cusBox.Controls.Add(this.numCusBox);
+            this.cusBox.Controls.Add(this.grdCustomers);
+            this.cusBox.Controls.Add(this.btnUpdateCustomer);
+            this.cusBox.Controls.Add(this.btnSearch);
             this.cusBox.Controls.Add(this.nameCusBox);
+            this.cusBox.Controls.Add(this.numCusBox);
+            this.cusBox.Controls.Add(this.txtSearch);
             this.cusBox.Controls.Add(this.label3);
-            this.cusBox.Controls.Add(this.AddCar);
             this.cusBox.Controls.Add(this.CusName);
             this.cusBox.Controls.Add(this.CusID);
             this.cusBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -81,7 +86,7 @@
             this.cusBox.Margin = new System.Windows.Forms.Padding(2);
             this.cusBox.Name = "cusBox";
             this.cusBox.Padding = new System.Windows.Forms.Padding(2);
-            this.cusBox.Size = new System.Drawing.Size(523, 341);
+            this.cusBox.Size = new System.Drawing.Size(656, 407);
             this.cusBox.TabIndex = 9;
             this.cusBox.TabStop = false;
             this.cusBox.Text = "Update Customer Details";
@@ -95,20 +100,6 @@
             this.label3.Size = new System.Drawing.Size(95, 20);
             this.label3.TabIndex = 12;
             this.label3.Text = "Customer ID:";
-            // 
-            // AddCar
-            // 
-            this.AddCar.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.AddCar.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddCar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.AddCar.Location = new System.Drawing.Point(292, 253);
-            this.AddCar.Margin = new System.Windows.Forms.Padding(2);
-            this.AddCar.Name = "AddCar";
-            this.AddCar.Size = new System.Drawing.Size(215, 53);
-            this.AddCar.TabIndex = 6;
-            this.AddCar.Text = "Update Customer";
-            this.AddCar.UseVisualStyleBackColor = false;
-            this.AddCar.Click += new System.EventHandler(this.AddCar_Click);
             // 
             // CusName
             // 
@@ -144,10 +135,9 @@
             this.exitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(559, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(698, 24);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // mechanicToolStripMenuItem
             // 
@@ -376,37 +366,67 @@
             this.exitToolStripMenuItem.Text = "Back";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // nameCusBox
+            // txtSearch
             // 
-            this.nameCusBox.Location = new System.Drawing.Point(200, 86);
-            this.nameCusBox.Margin = new System.Windows.Forms.Padding(1);
-            this.nameCusBox.Name = "nameCusBox";
-            this.nameCusBox.Size = new System.Drawing.Size(168, 24);
-            this.nameCusBox.TabIndex = 14;
+            this.txtSearch.Location = new System.Drawing.Point(163, 49);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(187, 24);
+            this.txtSearch.TabIndex = 17;
             // 
             // numCusBox
             // 
-            this.numCusBox.Location = new System.Drawing.Point(200, 126);
-            this.numCusBox.Margin = new System.Windows.Forms.Padding(1);
+            this.numCusBox.Location = new System.Drawing.Point(163, 129);
             this.numCusBox.Name = "numCusBox";
-            this.numCusBox.Size = new System.Drawing.Size(168, 24);
-            this.numCusBox.TabIndex = 15;
+            this.numCusBox.Size = new System.Drawing.Size(187, 24);
+            this.numCusBox.TabIndex = 19;
             // 
-            // CusIDBox
+            // nameCusBox
             // 
-            this.CusIDBox.FormattingEnabled = true;
-            this.CusIDBox.Location = new System.Drawing.Point(200, 46);
-            this.CusIDBox.Margin = new System.Windows.Forms.Padding(1);
-            this.CusIDBox.Name = "CusIDBox";
-            this.CusIDBox.Size = new System.Drawing.Size(68, 27);
-            this.CusIDBox.TabIndex = 16;
-            this.CusIDBox.SelectedValueChanged += new System.EventHandler(this.CusIDBox_SelectedValueChanged);
+            this.nameCusBox.Location = new System.Drawing.Point(163, 86);
+            this.nameCusBox.Name = "nameCusBox";
+            this.nameCusBox.Size = new System.Drawing.Size(187, 24);
+            this.nameCusBox.TabIndex = 20;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnSearch.Location = new System.Drawing.Point(393, 43);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(86, 31);
+            this.btnSearch.TabIndex = 21;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnUpdateCustomer
+            // 
+            this.btnUpdateCustomer.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnUpdateCustomer.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateCustomer.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnUpdateCustomer.Location = new System.Drawing.Point(440, 186);
+            this.btnUpdateCustomer.Name = "btnUpdateCustomer";
+            this.btnUpdateCustomer.Size = new System.Drawing.Size(188, 63);
+            this.btnUpdateCustomer.TabIndex = 22;
+            this.btnUpdateCustomer.Text = "Update Customer";
+            this.btnUpdateCustomer.UseVisualStyleBackColor = false;
+            this.btnUpdateCustomer.Click += new System.EventHandler(this.btnUpdateCustomer_Click);
+            // 
+            // grdCustomers
+            // 
+            this.grdCustomers.AllowUserToOrderColumns = true;
+            this.grdCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdCustomers.Location = new System.Drawing.Point(25, 186);
+            this.grdCustomers.Name = "grdCustomers";
+            this.grdCustomers.Size = new System.Drawing.Size(375, 206);
+            this.grdCustomers.TabIndex = 23;
+            this.grdCustomers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCustomers_CellClick);
+            this.grdCustomers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCustomers_CellContentClick_1);
             // 
             // UpdateCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(559, 404);
+            this.ClientSize = new System.Drawing.Size(698, 465);
             this.Controls.Add(this.cusBox);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -417,6 +437,7 @@
             this.cusBox.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdCustomers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -426,7 +447,6 @@
 
         private System.Windows.Forms.GroupBox cusBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button AddCar;
         private System.Windows.Forms.Label CusName;
         private System.Windows.Forms.Label CusID;
         private System.Windows.Forms.MenuStrip menuStrip1;
@@ -455,8 +475,11 @@
         private System.Windows.Forms.ToolStripMenuItem monthlyRevenueAnalysisToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateMechanicToolStripMenuItem;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.TextBox nameCusBox;
         private System.Windows.Forms.TextBox numCusBox;
-        private System.Windows.Forms.ComboBox CusIDBox;
+        private System.Windows.Forms.Button btnUpdateCustomer;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.DataGridView grdCustomers;
     }
 }

@@ -75,15 +75,5 @@ namespace CarServiceAdministration
                 MessageBox.Show("Unexpected error: " + ex.Message);
             }
         }
-
-        private void txtCusID_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

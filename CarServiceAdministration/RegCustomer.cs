@@ -26,38 +26,12 @@ namespace CarServiceAdministration
             this.Close();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void txtPhone_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPhone_Validating(object sender, CancelEventArgs e)
-        {
-
-
-        }
-
-        private void txtName_Validating(object sender, CancelEventArgs e)
-        {
-            if (txtName.Text.Any(char.IsDigit))
-            {
-                MessageBox.Show("Name cannot contain numbers.");
-                txtName.Focus();
-                return;
-            }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void addCustomer_Click(object sender, EventArgs e)
         {
             var confirmResult = MessageBox.Show("Confirm Customer's Information?",
                                      "Confirmation",
@@ -97,11 +71,6 @@ namespace CarServiceAdministration
                     }
                 }
             }
-        }
-
-        private void txtCusID_Validating(object sender, CancelEventArgs e)
-        {
-
         }
     }
 }

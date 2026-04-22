@@ -56,7 +56,7 @@
             this.monthlyRevenueAnalysisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cusBox = new System.Windows.Forms.GroupBox();
-            this.AddCustomer = new System.Windows.Forms.Button();
+            this.addCustomer = new System.Windows.Forms.Button();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.CusPhoneNum = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -314,7 +314,7 @@
             // 
             // cusBox
             // 
-            this.cusBox.Controls.Add(this.AddCustomer);
+            this.cusBox.Controls.Add(this.addCustomer);
             this.cusBox.Controls.Add(this.txtPhone);
             this.cusBox.Controls.Add(this.CusPhoneNum);
             this.cusBox.Controls.Add(this.txtName);
@@ -323,39 +323,36 @@
             this.cusBox.Controls.Add(this.CusID);
             this.cusBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cusBox.Location = new System.Drawing.Point(14, 30);
-            this.cusBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cusBox.Margin = new System.Windows.Forms.Padding(2);
             this.cusBox.Name = "cusBox";
-            this.cusBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cusBox.Padding = new System.Windows.Forms.Padding(2);
             this.cusBox.Size = new System.Drawing.Size(518, 400);
             this.cusBox.TabIndex = 4;
             this.cusBox.TabStop = false;
             this.cusBox.Text = "Enter Customer Details";
-            this.cusBox.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // AddCustomer
+            // addCustomer
             // 
-            this.AddCustomer.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.AddCustomer.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddCustomer.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.AddCustomer.Location = new System.Drawing.Point(293, 336);
-            this.AddCustomer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.AddCustomer.Name = "AddCustomer";
-            this.AddCustomer.Size = new System.Drawing.Size(215, 53);
-            this.AddCustomer.TabIndex = 6;
-            this.AddCustomer.Text = "Add Customer";
-            this.AddCustomer.UseVisualStyleBackColor = false;
-            this.AddCustomer.Click += new System.EventHandler(this.button1_Click);
+            this.addCustomer.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.addCustomer.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addCustomer.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.addCustomer.Location = new System.Drawing.Point(293, 336);
+            this.addCustomer.Margin = new System.Windows.Forms.Padding(2);
+            this.addCustomer.Name = "addCustomer";
+            this.addCustomer.Size = new System.Drawing.Size(215, 53);
+            this.addCustomer.TabIndex = 6;
+            this.addCustomer.Text = "Add Customer";
+            this.addCustomer.UseVisualStyleBackColor = false;
+            this.addCustomer.Click += new System.EventHandler(this.addCustomer_Click);
             // 
             // txtPhone
             // 
             this.txtPhone.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.txtPhone.Location = new System.Drawing.Point(141, 145);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(2);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(168, 24);
             this.txtPhone.TabIndex = 5;
-            this.txtPhone.TextChanged += new System.EventHandler(this.txtPhone_TextChanged);
-            this.txtPhone.Validating += new System.ComponentModel.CancelEventHandler(this.txtPhone_Validating);
             // 
             // CusPhoneNum
             // 
@@ -370,11 +367,10 @@
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(141, 93);
-            this.txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(168, 24);
             this.txtName.TabIndex = 3;
-            this.txtName.Validating += new System.ComponentModel.CancelEventHandler(this.txtName_Validating);
             // 
             // CusName
             // 
@@ -389,11 +385,10 @@
             // txtCusID
             // 
             this.txtCusID.Location = new System.Drawing.Point(141, 44);
-            this.txtCusID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCusID.Margin = new System.Windows.Forms.Padding(2);
             this.txtCusID.Name = "txtCusID";
             this.txtCusID.Size = new System.Drawing.Size(49, 24);
             this.txtCusID.TabIndex = 1;
-            this.txtCusID.Validating += new System.ComponentModel.CancelEventHandler(this.txtCusID_Validating);
             // 
             // CusID
             // 
@@ -414,7 +409,7 @@
             this.Controls.Add(this.cusBox);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "RegCustomer";
             this.Text = "RegCustomer";
             this.menuStrip1.ResumeLayout(false);
@@ -461,6 +456,6 @@
         private System.Windows.Forms.Label CusName;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label CusPhoneNum;
-        private System.Windows.Forms.Button AddCustomer;
+        private System.Windows.Forms.Button addCustomer;
     }
 }

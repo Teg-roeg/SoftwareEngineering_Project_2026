@@ -73,9 +73,11 @@
             this.servBox.Controls.Add(this.RmvService);
             this.servBox.Controls.Add(this.ServiceID);
             this.servBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.servBox.Location = new System.Drawing.Point(23, 67);
+            this.servBox.Location = new System.Drawing.Point(13, 36);
+            this.servBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.servBox.Name = "servBox";
-            this.servBox.Size = new System.Drawing.Size(1062, 472);
+            this.servBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.servBox.Size = new System.Drawing.Size(579, 256);
             this.servBox.TabIndex = 9;
             this.servBox.TabStop = false;
             this.servBox.Text = "Remove Service Details ";
@@ -85,9 +87,10 @@
             this.button1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.button1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(45, 295);
+            this.button1.Location = new System.Drawing.Point(25, 160);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(394, 98);
+            this.button1.Size = new System.Drawing.Size(215, 53);
             this.button1.TabIndex = 14;
             this.button1.Text = "Cancel";
             this.button1.UseVisualStyleBackColor = false;
@@ -96,21 +99,20 @@
             // listServBox
             // 
             this.listServBox.FormattingEnabled = true;
-            this.listServBox.ItemHeight = 30;
-            this.listServBox.Location = new System.Drawing.Point(446, 81);
+            this.listServBox.ItemHeight = 19;
+            this.listServBox.Location = new System.Drawing.Point(243, 44);
+            this.listServBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listServBox.Name = "listServBox";
-            this.listServBox.Size = new System.Drawing.Size(572, 154);
+            this.listServBox.Size = new System.Drawing.Size(314, 80);
             this.listServBox.TabIndex = 13;
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "1",
-            "2"});
-            this.comboBox1.Location = new System.Drawing.Point(258, 81);
+            this.comboBox1.Location = new System.Drawing.Point(141, 44);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(149, 38);
+            this.comboBox1.Size = new System.Drawing.Size(83, 27);
             this.comboBox1.TabIndex = 12;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -119,9 +121,10 @@
             this.RmvService.BackColor = System.Drawing.SystemColors.HotTrack;
             this.RmvService.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RmvService.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.RmvService.Location = new System.Drawing.Point(624, 295);
+            this.RmvService.Location = new System.Drawing.Point(340, 160);
+            this.RmvService.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.RmvService.Name = "RmvService";
-            this.RmvService.Size = new System.Drawing.Size(394, 98);
+            this.RmvService.Size = new System.Drawing.Size(215, 53);
             this.RmvService.TabIndex = 6;
             this.RmvService.Text = "Remove Service";
             this.RmvService.UseVisualStyleBackColor = false;
@@ -130,16 +133,16 @@
             // ServiceID
             // 
             this.ServiceID.AutoSize = true;
-            this.ServiceID.Location = new System.Drawing.Point(39, 84);
+            this.ServiceID.Location = new System.Drawing.Point(21, 46);
+            this.ServiceID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ServiceID.Name = "ServiceID";
-            this.ServiceID.Size = new System.Drawing.Size(134, 31);
+            this.ServiceID.Size = new System.Drawing.Size(78, 20);
             this.ServiceID.TabIndex = 0;
             this.ServiceID.Text = "Service ID:";
             // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.Menu;
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(28, 28);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mechanicToolStripMenuItem,
@@ -151,8 +154,7 @@
             this.exitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(11, 4, 0, 4);
-            this.menuStrip1.Size = new System.Drawing.Size(1111, 41);
+            this.menuStrip1.Size = new System.Drawing.Size(606, 24);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -165,7 +167,7 @@
             this.mechanicToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mechanicToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.mechanicToolStripMenuItem.Name = "mechanicToolStripMenuItem";
-            this.mechanicToolStripMenuItem.Size = new System.Drawing.Size(127, 33);
+            this.mechanicToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.mechanicToolStripMenuItem.Text = "Mechanic";
             // 
             // regMechanicToolStripMenuItem
@@ -173,7 +175,7 @@
             this.regMechanicToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.regMechanicToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.regMechanicToolStripMenuItem.Name = "regMechanicToolStripMenuItem";
-            this.regMechanicToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.regMechanicToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.regMechanicToolStripMenuItem.Text = "Reg Mechanic";
             // 
             // updateMechanicToolStripMenuItem
@@ -181,7 +183,7 @@
             this.updateMechanicToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.updateMechanicToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.updateMechanicToolStripMenuItem.Name = "updateMechanicToolStripMenuItem";
-            this.updateMechanicToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.updateMechanicToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.updateMechanicToolStripMenuItem.Text = "Update Mechanic";
             // 
             // removeMechanicToolStripMenuItem
@@ -189,7 +191,7 @@
             this.removeMechanicToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.removeMechanicToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.removeMechanicToolStripMenuItem.Name = "removeMechanicToolStripMenuItem";
-            this.removeMechanicToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.removeMechanicToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.removeMechanicToolStripMenuItem.Text = "Remove Mechanic";
             // 
             // carToolStripMenuItem
@@ -201,7 +203,7 @@
             this.carToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.carToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.carToolStripMenuItem.Name = "carToolStripMenuItem";
-            this.carToolStripMenuItem.Size = new System.Drawing.Size(63, 33);
+            this.carToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.carToolStripMenuItem.Text = "Car";
             // 
             // regCarToolStripMenuItem
@@ -209,7 +211,7 @@
             this.regCarToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.regCarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.regCarToolStripMenuItem.Name = "regCarToolStripMenuItem";
-            this.regCarToolStripMenuItem.Size = new System.Drawing.Size(251, 40);
+            this.regCarToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.regCarToolStripMenuItem.Text = "Reg Car";
             // 
             // updateCarToolStripMenuItem
@@ -217,7 +219,7 @@
             this.updateCarToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.updateCarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.updateCarToolStripMenuItem.Name = "updateCarToolStripMenuItem";
-            this.updateCarToolStripMenuItem.Size = new System.Drawing.Size(251, 40);
+            this.updateCarToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.updateCarToolStripMenuItem.Text = "Update Car";
             // 
             // removeCarToolStripMenuItem
@@ -225,7 +227,7 @@
             this.removeCarToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.removeCarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.removeCarToolStripMenuItem.Name = "removeCarToolStripMenuItem";
-            this.removeCarToolStripMenuItem.Size = new System.Drawing.Size(251, 40);
+            this.removeCarToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.removeCarToolStripMenuItem.Text = "Remove Car";
             // 
             // customerToolStripMenuItem
@@ -236,24 +238,20 @@
             this.customerToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customerToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
-            this.customerToolStripMenuItem.Size = new System.Drawing.Size(102, 33);
+            this.customerToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
             this.customerToolStripMenuItem.Text = "Service";
             // 
             // regServiceToolStripMenuItem
             // 
-            this.regServiceToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.regServiceToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.regServiceToolStripMenuItem.Name = "regServiceToolStripMenuItem";
-            this.regServiceToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
-            this.regServiceToolStripMenuItem.Text = "Reg Service";
-            this.regServiceToolStripMenuItem.Click += new System.EventHandler(this.regServiceToolStripMenuItem_Click);
+            this.regServiceToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             // 
             // updateServiceToolStripMenuItem
             // 
             this.updateServiceToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.updateServiceToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.updateServiceToolStripMenuItem.Name = "updateServiceToolStripMenuItem";
-            this.updateServiceToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.updateServiceToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.updateServiceToolStripMenuItem.Text = "Update Service";
             // 
             // serviceToolStripMenuItem
@@ -265,7 +263,7 @@
             this.serviceToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.serviceToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.serviceToolStripMenuItem.Name = "serviceToolStripMenuItem";
-            this.serviceToolStripMenuItem.Size = new System.Drawing.Size(127, 33);
+            this.serviceToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
             this.serviceToolStripMenuItem.Text = "Customer";
             // 
             // regCustomerToolStripMenuItem
@@ -273,7 +271,7 @@
             this.regCustomerToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.regCustomerToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.regCustomerToolStripMenuItem.Name = "regCustomerToolStripMenuItem";
-            this.regCustomerToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.regCustomerToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.regCustomerToolStripMenuItem.Text = "Reg Customer";
             // 
             // updateCustomerToolStripMenuItem
@@ -281,7 +279,7 @@
             this.updateCustomerToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.updateCustomerToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.updateCustomerToolStripMenuItem.Name = "updateCustomerToolStripMenuItem";
-            this.updateCustomerToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.updateCustomerToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.updateCustomerToolStripMenuItem.Text = "Update Customer";
             // 
             // removeCustomerToolStripMenuItem
@@ -289,7 +287,7 @@
             this.removeCustomerToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.removeCustomerToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.removeCustomerToolStripMenuItem.Name = "removeCustomerToolStripMenuItem";
-            this.removeCustomerToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.removeCustomerToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.removeCustomerToolStripMenuItem.Text = "Remove Customer";
             // 
             // bookingToolStripMenuItem
@@ -302,7 +300,7 @@
             this.bookingToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bookingToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.bookingToolStripMenuItem.Name = "bookingToolStripMenuItem";
-            this.bookingToolStripMenuItem.Size = new System.Drawing.Size(114, 33);
+            this.bookingToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.bookingToolStripMenuItem.Text = "Booking";
             // 
             // scheduleBookingToolStripMenuItem
@@ -310,7 +308,7 @@
             this.scheduleBookingToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.scheduleBookingToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.scheduleBookingToolStripMenuItem.Name = "scheduleBookingToolStripMenuItem";
-            this.scheduleBookingToolStripMenuItem.Size = new System.Drawing.Size(310, 40);
+            this.scheduleBookingToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.scheduleBookingToolStripMenuItem.Text = "Schedule Booking";
             // 
             // updateBookingToolStripMenuItem
@@ -318,7 +316,7 @@
             this.updateBookingToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.updateBookingToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.updateBookingToolStripMenuItem.Name = "updateBookingToolStripMenuItem";
-            this.updateBookingToolStripMenuItem.Size = new System.Drawing.Size(310, 40);
+            this.updateBookingToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.updateBookingToolStripMenuItem.Text = "Update Booking";
             // 
             // cancelBookingToolStripMenuItem
@@ -326,7 +324,7 @@
             this.cancelBookingToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cancelBookingToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.cancelBookingToolStripMenuItem.Name = "cancelBookingToolStripMenuItem";
-            this.cancelBookingToolStripMenuItem.Size = new System.Drawing.Size(310, 40);
+            this.cancelBookingToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.cancelBookingToolStripMenuItem.Text = "Cancel Booking";
             // 
             // viewBookingToolStripMenuItem
@@ -334,7 +332,7 @@
             this.viewBookingToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.viewBookingToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.viewBookingToolStripMenuItem.Name = "viewBookingToolStripMenuItem";
-            this.viewBookingToolStripMenuItem.Size = new System.Drawing.Size(310, 40);
+            this.viewBookingToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.viewBookingToolStripMenuItem.Text = "View Booking";
             // 
             // adminToolStripMenuItem
@@ -346,7 +344,7 @@
             this.adminToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adminToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(97, 33);
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.adminToolStripMenuItem.Text = "Admin";
             // 
             // generateInvoiceToolStripMenuItem
@@ -354,7 +352,7 @@
             this.generateInvoiceToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.generateInvoiceToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.generateInvoiceToolStripMenuItem.Name = "generateInvoiceToolStripMenuItem";
-            this.generateInvoiceToolStripMenuItem.Size = new System.Drawing.Size(397, 40);
+            this.generateInvoiceToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.generateInvoiceToolStripMenuItem.Text = "Generate Invoice";
             // 
             // recordPaymentToolStripMenuItem
@@ -362,7 +360,7 @@
             this.recordPaymentToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.recordPaymentToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.recordPaymentToolStripMenuItem.Name = "recordPaymentToolStripMenuItem";
-            this.recordPaymentToolStripMenuItem.Size = new System.Drawing.Size(397, 40);
+            this.recordPaymentToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.recordPaymentToolStripMenuItem.Text = "Record Payment";
             // 
             // monthlyRevenueAnalysisToolStripMenuItem
@@ -370,7 +368,7 @@
             this.monthlyRevenueAnalysisToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.monthlyRevenueAnalysisToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.monthlyRevenueAnalysisToolStripMenuItem.Name = "monthlyRevenueAnalysisToolStripMenuItem";
-            this.monthlyRevenueAnalysisToolStripMenuItem.Size = new System.Drawing.Size(397, 40);
+            this.monthlyRevenueAnalysisToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.monthlyRevenueAnalysisToolStripMenuItem.Text = "Monthly Revenue Analysis";
             // 
             // exitToolStripMenuItem
@@ -380,18 +378,19 @@
             this.exitToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(78, 33);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.exitToolStripMenuItem.Text = "Back";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // RemoveService
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1111, 561);
+            this.ClientSize = new System.Drawing.Size(606, 304);
             this.Controls.Add(this.servBox);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "RemoveService";
             this.Text = "RemoveService";
             this.servBox.ResumeLayout(false);
