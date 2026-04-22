@@ -32,15 +32,15 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gntInvBox = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.euroLbl = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.bookIDBox = new System.Windows.Forms.ComboBox();
             this.invListBox = new System.Windows.Forms.ListBox();
-            this.generateInvoiceBut = new System.Windows.Forms.Button();
+            this.btnGenerateInvoice = new System.Windows.Forms.Button();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.CusPhoneNum = new System.Windows.Forms.Label();
             this.invBookID = new System.Windows.Forms.Label();
             this.InvID = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.gntInvBox.SuspendLayout();
             this.SuspendLayout();
@@ -74,9 +74,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gntInvBox.Controls.Add(this.textBox1);
             this.gntInvBox.Controls.Add(this.euroLbl);
-            this.gntInvBox.Controls.Add(this.comboBox2);
+            this.gntInvBox.Controls.Add(this.bookIDBox);
             this.gntInvBox.Controls.Add(this.invListBox);
-            this.gntInvBox.Controls.Add(this.generateInvoiceBut);
+            this.gntInvBox.Controls.Add(this.btnGenerateInvoice);
             this.gntInvBox.Controls.Add(this.txtPrice);
             this.gntInvBox.Controls.Add(this.CusPhoneNum);
             this.gntInvBox.Controls.Add(this.invBookID);
@@ -84,80 +84,78 @@
             this.gntInvBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gntInvBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gntInvBox.Location = new System.Drawing.Point(33, 32);
-            this.gntInvBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gntInvBox.Margin = new System.Windows.Forms.Padding(2);
             this.gntInvBox.Name = "gntInvBox";
-            this.gntInvBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gntInvBox.Padding = new System.Windows.Forms.Padding(2);
             this.gntInvBox.Size = new System.Drawing.Size(512, 400);
             this.gntInvBox.TabIndex = 5;
             this.gntInvBox.TabStop = false;
             this.gntInvBox.Text = "Generate Invoice";
-            this.gntInvBox.Enter += new System.EventHandler(this.cusBox_Enter);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(105, 45);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 24);
+            this.textBox1.TabIndex = 12;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // euroLbl
             // 
             this.euroLbl.AutoSize = true;
-            this.euroLbl.Location = new System.Drawing.Point(434, 137);
+            this.euroLbl.Location = new System.Drawing.Point(442, 139);
             this.euroLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.euroLbl.Name = "euroLbl";
             this.euroLbl.Size = new System.Drawing.Size(17, 20);
             this.euroLbl.TabIndex = 11;
             this.euroLbl.Text = "€";
             // 
-            // comboBox2
+            // bookIDBox
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4"});
-            this.comboBox2.Location = new System.Drawing.Point(373, 42);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(83, 27);
-            this.comboBox2.TabIndex = 10;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.bookIDBox.FormattingEnabled = true;
+            this.bookIDBox.Location = new System.Drawing.Point(373, 42);
+            this.bookIDBox.Margin = new System.Windows.Forms.Padding(2);
+            this.bookIDBox.Name = "bookIDBox";
+            this.bookIDBox.Size = new System.Drawing.Size(83, 27);
+            this.bookIDBox.TabIndex = 10;
+            this.bookIDBox.SelectedIndexChanged += new System.EventHandler(this.bookIDBox_SelectedIndexChanged);
             // 
             // invListBox
             // 
             this.invListBox.FormattingEnabled = true;
             this.invListBox.ItemHeight = 19;
             this.invListBox.Location = new System.Drawing.Point(25, 90);
-            this.invListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.invListBox.Margin = new System.Windows.Forms.Padding(2);
             this.invListBox.Name = "invListBox";
             this.invListBox.Size = new System.Drawing.Size(238, 175);
             this.invListBox.TabIndex = 9;
-            this.invListBox.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.invListBox.SelectedIndexChanged += new System.EventHandler(this.invListBox_SelectedIndexChanged);
             // 
-            // generateInvoiceBut
+            // btnGenerateInvoice
             // 
-            this.generateInvoiceBut.BackColor = System.Drawing.Color.Teal;
-            this.generateInvoiceBut.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.generateInvoiceBut.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.generateInvoiceBut.Location = new System.Drawing.Point(150, 336);
-            this.generateInvoiceBut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.generateInvoiceBut.Name = "generateInvoiceBut";
-            this.generateInvoiceBut.Size = new System.Drawing.Size(215, 53);
-            this.generateInvoiceBut.TabIndex = 6;
-            this.generateInvoiceBut.Text = "Generate Invoice";
-            this.generateInvoiceBut.UseVisualStyleBackColor = false;
-            this.generateInvoiceBut.Click += new System.EventHandler(this.AddCustomer_Click);
+            this.btnGenerateInvoice.BackColor = System.Drawing.Color.Teal;
+            this.btnGenerateInvoice.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerateInvoice.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnGenerateInvoice.Location = new System.Drawing.Point(158, 308);
+            this.btnGenerateInvoice.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGenerateInvoice.Name = "btnGenerateInvoice";
+            this.btnGenerateInvoice.Size = new System.Drawing.Size(215, 53);
+            this.btnGenerateInvoice.TabIndex = 6;
+            this.btnGenerateInvoice.Text = "Generate Invoice";
+            this.btnGenerateInvoice.UseVisualStyleBackColor = false;
+            this.btnGenerateInvoice.Click += new System.EventHandler(this.btnGenerateInvoice_Click);
             // 
             // txtPrice
             // 
-            this.txtPrice.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtPrice.AccessibleName = "";
+            this.txtPrice.ForeColor = System.Drawing.SystemColors.InfoText;
             this.txtPrice.Location = new System.Drawing.Point(373, 135);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(65, 24);
             this.txtPrice.TabIndex = 5;
             this.txtPrice.Tag = "";
-            this.txtPrice.Text = "0.00";
             this.txtPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtPrice.Click += new System.EventHandler(this.txtPrice_Click);
-            this.txtPrice.TextChanged += new System.EventHandler(this.txtPhone_TextChanged);
-            this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
-            this.txtPrice.Leave += new System.EventHandler(this.txtPrice_Leave);
             // 
             // CusPhoneNum
             // 
@@ -192,13 +190,6 @@
             this.InvID.Text = "Invoice ID:";
             this.InvID.Click += new System.EventHandler(this.CusID_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(105, 45);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 24);
-            this.textBox1.TabIndex = 12;
-            // 
             // GenerateInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -207,9 +198,10 @@
             this.Controls.Add(this.gntInvBox);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GenerateInvoice";
             this.Text = "GenerateInvoice";
+            this.Load += new System.EventHandler(this.GenerateInvoice_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.gntInvBox.ResumeLayout(false);
@@ -224,13 +216,13 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.GroupBox gntInvBox;
-        private System.Windows.Forms.Button generateInvoiceBut;
+        private System.Windows.Forms.Button btnGenerateInvoice;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Label CusPhoneNum;
         private System.Windows.Forms.Label invBookID;
         private System.Windows.Forms.Label InvID;
         private System.Windows.Forms.ListBox invListBox;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox bookIDBox;
         private System.Windows.Forms.Label euroLbl;
         private System.Windows.Forms.TextBox textBox1;
     }

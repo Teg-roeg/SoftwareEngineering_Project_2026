@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using Oracle.ManagedDataAccess.Client;
+using CarServiceAdministration.DBConnect;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CarServiceAdministration
 {
@@ -18,55 +13,79 @@ namespace CarServiceAdministration
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void RecordPayment_Load(object sender, EventArgs e)
         {
-
+            LoadInvoiceIDs();
         }
 
-        private void bookCB_SelectedIndexChanged(object sender, EventArgs e)
+        private void LoadInvoiceIDs()
         {
-            if (bookCB.SelectedIndex == 0)  
+            try
             {
-                listInvc.Items.Clear();  
+                using (OracleConnection con = new OracleConnection(Database.connectionString))
+                {
+                    con.Open();
+                    string query = "SELECT InvID FROM Invoices ORDER BY InvID";
 
-                listInvc.Items.Add("Invoice ID: 1");
-                listInvc.Items.Add("Amount to Pay: 350.00");
+                    using (OracleDataAdapter da = new OracleDataAdapter(query, con))
+                    {
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
 
+                        InvIDBox.DataSource = dt;
+                        InvIDBox.DisplayMember = "InvID";
+                        InvIDBox.ValueMember = "InvID";
+                        InvIDBox.SelectedIndex = -1;
+                    }
+                }
             }
-            else if (bookCB.SelectedIndex == 1)
+            catch (Exception ex)
             {
-                listInvc.Items.Clear();  
-
-                listInvc.Items.Add("Invoice ID: 2");
-                listInvc.Items.Add("Amount to Pay: 120.00");
-
+                MessageBox.Show("Error loading invoice IDs: " + ex.Message);
             }
         }
 
-        private void txtTotal_TextChanged(object sender, EventArgs e)
+        private void btnConfirm_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void listInvc_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            var confirmResult = MessageBox.Show("Are you sure you want to change Payment Record Status?",
-                                     "Confirmation",
-                                     MessageBoxButtons.YesNo);
-            if (confirmResult == DialogResult.Yes)
+            if (string.IsNullOrWhiteSpace(PayIDBox.Text))
             {
-                this.Controls.Clear();
-                this.InitializeComponent();
-                bookCB.Focus();
-            }
-            else
-            {
+                MessageBox.Show("Enter Pay ID");
                 return;
+            }
+
+            if (InvIDBox.SelectedItem == null)
+            {
+                MessageBox.Show("Select Invoice ID");
+                return;
+            }
+
+         
+            if (!decimal.TryParse(AmntPaid.Text.Trim(), out decimal amountPaid))
+            {
+                MessageBox.Show("Invalid amount");
+                return;
+            }
+
+            int payID = Convert.ToInt32(PayIDBox.Text.Trim());
+            int invID = Convert.ToInt32(((DataRowView)InvIDBox.SelectedItem)["InvID"]);
+
+            using (OracleConnection con = new OracleConnection(Database.connectionString))
+            {
+                con.Open();
+                string query = @"
+            INSERT INTO Payments (PayID, InvID, AmntPaid, PaymentDate)
+            VALUES (:payid, :invid, :amt, :paydate)";
+
+                using (OracleCommand cmd = new OracleCommand(query, con))
+                {
+                    cmd.Parameters.Add(":payid", OracleDbType.Int32).Value = payID;
+                    cmd.Parameters.Add(":invid", OracleDbType.Int32).Value = invID;
+                    cmd.Parameters.Add(":amt", OracleDbType.Decimal).Value = amountPaid;
+                    cmd.Parameters.Add(":paydate", OracleDbType.TimeStamp).Value = DateTime.Now;
+
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Payment recorded successfully!");
+                }
             }
         }
 
@@ -75,16 +94,6 @@ namespace CarServiceAdministration
             Form1 menu = new Form1();
             menu.Show();
             this.Close();
-        }
-
-        private void adminToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void regServiceToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
