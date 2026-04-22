@@ -58,7 +58,7 @@ namespace CarServiceAdministration
                 using (OracleConnection con = new OracleConnection(Database.connectionString))
                 {
                     con.Open();
-                    string query = "SELECT SerID FROM Services"; // only ID
+                    string query = "SELECT SerID FROM Services"; 
 
                     using (OracleDataAdapter da = new OracleDataAdapter(query, con))
                     {
@@ -251,6 +251,11 @@ namespace CarServiceAdministration
         }
 
         private void grdCars_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -36,7 +36,7 @@
             this.date = new System.Windows.Forms.Label();
             this.mechCB = new System.Windows.Forms.ComboBox();
             this.mechID = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.bookingDatePicker = new System.Windows.Forms.DateTimePicker();
             this.serviceCB = new System.Windows.Forms.ComboBox();
             this.ServiceID = new System.Windows.Forms.Label();
             this.cusID = new System.Windows.Forms.Label();
@@ -58,7 +58,7 @@
             this.cusBox.Controls.Add(this.date);
             this.cusBox.Controls.Add(this.mechCB);
             this.cusBox.Controls.Add(this.mechID);
-            this.cusBox.Controls.Add(this.dateTimePicker1);
+            this.cusBox.Controls.Add(this.bookingDatePicker);
             this.cusBox.Controls.Add(this.serviceCB);
             this.cusBox.Controls.Add(this.ServiceID);
             this.cusBox.Controls.Add(this.cusID);
@@ -70,7 +70,7 @@
             this.cusBox.Margin = new System.Windows.Forms.Padding(2);
             this.cusBox.Name = "cusBox";
             this.cusBox.Padding = new System.Windows.Forms.Padding(2);
-            this.cusBox.Size = new System.Drawing.Size(673, 289);
+            this.cusBox.Size = new System.Drawing.Size(673, 396);
             this.cusBox.TabIndex = 15;
             this.cusBox.TabStop = false;
             this.cusBox.Text = "Update Booking Details";
@@ -79,10 +79,11 @@
             // 
             this.btnSearch.Location = new System.Drawing.Point(225, 89);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(82, 48);
+            this.btnSearch.Size = new System.Drawing.Size(125, 48);
             this.btnSearch.TabIndex = 39;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearch
             // 
@@ -96,13 +97,13 @@
             this.grdCars.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdCars.Location = new System.Drawing.Point(28, 143);
             this.grdCars.Name = "grdCars";
-            this.grdCars.Size = new System.Drawing.Size(396, 60);
+            this.grdCars.Size = new System.Drawing.Size(396, 177);
             this.grdCars.TabIndex = 37;
             // 
             // date
             // 
             this.date.AutoSize = true;
-            this.date.Location = new System.Drawing.Point(24, 247);
+            this.date.Location = new System.Drawing.Point(24, 346);
             this.date.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.date.Name = "date";
             this.date.Size = new System.Drawing.Size(44, 20);
@@ -116,7 +117,7 @@
             "1",
             "2",
             "3"});
-            this.mechCB.Location = new System.Drawing.Point(436, 86);
+            this.mechCB.Location = new System.Drawing.Point(534, 86);
             this.mechCB.Margin = new System.Windows.Forms.Padding(2);
             this.mechCB.Name = "mechCB";
             this.mechCB.Size = new System.Drawing.Size(83, 27);
@@ -125,21 +126,21 @@
             // mechID
             // 
             this.mechID.AutoSize = true;
-            this.mechID.Location = new System.Drawing.Point(334, 89);
+            this.mechID.Location = new System.Drawing.Point(432, 89);
             this.mechID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.mechID.Name = "mechID";
             this.mechID.Size = new System.Drawing.Size(97, 20);
             this.mechID.TabIndex = 34;
             this.mechID.Text = "Mechanic ID:";
             // 
-            // dateTimePicker1
+            // bookingDatePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(72, 243);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker1.MinDate = new System.DateTime(2025, 12, 7, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(312, 24);
-            this.dateTimePicker1.TabIndex = 33;
+            this.bookingDatePicker.Location = new System.Drawing.Point(72, 346);
+            this.bookingDatePicker.Margin = new System.Windows.Forms.Padding(2);
+            this.bookingDatePicker.MinDate = new System.DateTime(2025, 12, 7, 0, 0, 0, 0);
+            this.bookingDatePicker.Name = "bookingDatePicker";
+            this.bookingDatePicker.Size = new System.Drawing.Size(312, 24);
+            this.bookingDatePicker.TabIndex = 33;
             // 
             // serviceCB
             // 
@@ -150,7 +151,7 @@
             "3",
             "4",
             "5"});
-            this.serviceCB.Location = new System.Drawing.Point(436, 36);
+            this.serviceCB.Location = new System.Drawing.Point(534, 36);
             this.serviceCB.Margin = new System.Windows.Forms.Padding(2);
             this.serviceCB.Name = "serviceCB";
             this.serviceCB.Size = new System.Drawing.Size(83, 27);
@@ -159,7 +160,7 @@
             // ServiceID
             // 
             this.ServiceID.AutoSize = true;
-            this.ServiceID.Location = new System.Drawing.Point(334, 43);
+            this.ServiceID.Location = new System.Drawing.Point(432, 43);
             this.ServiceID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ServiceID.Name = "ServiceID";
             this.ServiceID.Size = new System.Drawing.Size(78, 20);
@@ -192,19 +193,21 @@
             this.bookIDBox.Name = "bookIDBox";
             this.bookIDBox.Size = new System.Drawing.Size(82, 27);
             this.bookIDBox.TabIndex = 40;
+            this.bookIDBox.SelectedIndexChanged += new System.EventHandler(this.bookIDBox_SelectedIndexChanged);
             // 
             // btnUpdateBooking
             // 
             this.btnUpdateBooking.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnUpdateBooking.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateBooking.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnUpdateBooking.Location = new System.Drawing.Point(436, 227);
+            this.btnUpdateBooking.Location = new System.Drawing.Point(436, 330);
             this.btnUpdateBooking.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateBooking.Name = "btnUpdateBooking";
             this.btnUpdateBooking.Size = new System.Drawing.Size(215, 53);
             this.btnUpdateBooking.TabIndex = 6;
             this.btnUpdateBooking.Text = "Update Booking";
             this.btnUpdateBooking.UseVisualStyleBackColor = false;
+            this.btnUpdateBooking.Click += new System.EventHandler(this.btnUpdateBooking_Click);
             // 
             // menuStrip1
             // 
@@ -233,13 +236,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(703, 326);
+            this.ClientSize = new System.Drawing.Size(703, 433);
             this.Controls.Add(this.cusBox);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UpdateBooking";
             this.Text = "UpdateBooking";
+            this.Load += new System.EventHandler(this.UpdateBooking_Load);
             this.cusBox.ResumeLayout(false);
             this.cusBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdCars)).EndInit();
@@ -261,7 +265,7 @@
         private System.Windows.Forms.Label date;
         private System.Windows.Forms.ComboBox mechCB;
         private System.Windows.Forms.Label mechID;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker bookingDatePicker;
         private System.Windows.Forms.ComboBox serviceCB;
         private System.Windows.Forms.Label ServiceID;
         private System.Windows.Forms.Label cusID;
