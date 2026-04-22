@@ -24,8 +24,7 @@ namespace CarServiceAdministration
         {
             try
             {
-                using (OracleConnection con =
-                    new OracleConnection(Database.connectionString))
+                using (OracleConnection con = new OracleConnection(Database.connectionString))
                 {
                     con.Open();
 

@@ -80,6 +80,7 @@
             this.listMechBox.Name = "listMechBox";
             this.listMechBox.Size = new System.Drawing.Size(295, 99);
             this.listMechBox.TabIndex = 15;
+            this.listMechBox.SelectedIndexChanged += new System.EventHandler(this.listMechBox_SelectedIndexChanged_1);
             // 
             // comboBox1
             // 

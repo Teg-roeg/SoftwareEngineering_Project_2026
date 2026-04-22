@@ -15,7 +15,7 @@ namespace CarServiceAdministration
 
         private void RegCar_Load(object sender, EventArgs e)
         {
-            // Load customer IDs into the ComboBox
+            // Load customer ids into the combobox
             using (OracleConnection con = new OracleConnection(Database.connectionString))
             {
                 try
@@ -79,10 +79,12 @@ namespace CarServiceAdministration
 
                     MessageBox.Show("Car added successfully!");
 
-                    // Clear inputs
+                    // -- Clear inputs --
                     CarIDBox.Clear();
                     txtRegNum.Clear();
                     txtBrand.Clear();
+                    txtModel.Clear();
+                    txtYear.Clear();
                     CusIDBox.Focus();
                 }
                 catch (Exception ex)

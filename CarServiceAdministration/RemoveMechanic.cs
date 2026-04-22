@@ -134,5 +134,10 @@ namespace CarServiceAdministration
         {
 
         }
+
+        private void listMechBox_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
