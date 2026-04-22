@@ -13,7 +13,6 @@ namespace CarServiceAdministration
             InitializeComponent();
         }
 
-        // LOAD DATA INTO COMBOBOX
         private void RemoveCustomer_Load(object sender, EventArgs e)
         {
             using (OracleConnection con = new OracleConnection(Database.connectionString))
@@ -42,7 +41,6 @@ namespace CarServiceAdministration
             }
         }
 
-        // SHOW SELECTED CUSTOMER DETAILS
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedItem == null || !(comboBox1.SelectedItem is DataRowView row))
@@ -55,7 +53,6 @@ namespace CarServiceAdministration
             listCusBox.Items.Add("Phone Number: " + row["PhoneNum"]);
         }
 
-        // REMOVE CUSTOMER
         private void RmvCustomer_Click(object sender, EventArgs e)
         {
             var confirmResult = MessageBox.Show(
@@ -104,7 +101,6 @@ namespace CarServiceAdministration
             }
         }
 
-        // CANCEL BUTTON (button1)
         private void button1_Click(object sender, EventArgs e)
         {
             var confirmResult = MessageBox.Show(
@@ -119,7 +115,6 @@ namespace CarServiceAdministration
             listCusBox.Items.Clear();
         }
 
-        // EXIT
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form1 menu = new Form1();
