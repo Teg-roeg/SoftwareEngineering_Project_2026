@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MonthlyRevenueAnalysis));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.listMonthly = new System.Windows.Forms.ListBox();
-            this.yearCB = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.monthCB = new System.Windows.Forms.ComboBox();
+            this.chtData = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.yearCB = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chtData)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -50,7 +51,7 @@
             this.exitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(591, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(730, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -67,44 +68,47 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.listMonthly);
+            this.groupBox1.Controls.Add(this.chtData);
             this.groupBox1.Controls.Add(this.yearCB);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.monthCB);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(16, 36);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Location = new System.Drawing.Point(16, 26);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(557, 334);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(703, 445);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Monthly Revenue Analysis";
+            this.groupBox1.Text = "Yearly Revenue Analysis";
             // 
-            // button1
+            // label2
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(26, 253);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(184, 57);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Calculate";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(22, 60);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 24);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Year:";
             // 
-            // listMonthly
+            // chtData
             // 
-            this.listMonthly.FormattingEnabled = true;
-            this.listMonthly.ItemHeight = 24;
-            this.listMonthly.Location = new System.Drawing.Point(241, 67);
-            this.listMonthly.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.listMonthly.Name = "listMonthly";
-            this.listMonthly.Size = new System.Drawing.Size(302, 124);
-            this.listMonthly.TabIndex = 17;
+            this.chtData.BackColor = System.Drawing.Color.OldLace;
+            this.chtData.BorderlineColor = System.Drawing.Color.DimGray;
+            chartArea1.Name = "ChartArea1";
+            this.chtData.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chtData.Legends.Add(legend1);
+            this.chtData.Location = new System.Drawing.Point(26, 105);
+            this.chtData.Name = "chtData";
+            this.chtData.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chtData.Series.Add(series1);
+            this.chtData.Size = new System.Drawing.Size(656, 320);
+            this.chtData.TabIndex = 20;
+            this.chtData.Text = "chart1";
             // 
             // yearCB
             // 
@@ -113,70 +117,30 @@
             "2024",
             "2025",
             "2026"});
-            this.yearCB.Location = new System.Drawing.Point(101, 119);
-            this.yearCB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.yearCB.Location = new System.Drawing.Point(80, 57);
+            this.yearCB.Margin = new System.Windows.Forms.Padding(2);
             this.yearCB.Name = "yearCB";
             this.yearCB.Size = new System.Drawing.Size(110, 32);
             this.yearCB.TabIndex = 16;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 124);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 24);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Year:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 69);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 24);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Month:";
-            // 
-            // monthCB
-            // 
-            this.monthCB.FormattingEnabled = true;
-            this.monthCB.Items.AddRange(new object[] {
-            "Jan",
-            "Feb",
-            "Mar",
-            "Apr",
-            "May",
-            "Jun",
-            "Jul",
-            "Aug",
-            "Sep",
-            "Oct",
-            "Nov",
-            "Dec"});
-            this.monthCB.Location = new System.Drawing.Point(101, 67);
-            this.monthCB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.monthCB.Name = "monthCB";
-            this.monthCB.Size = new System.Drawing.Size(110, 32);
-            this.monthCB.TabIndex = 13;
+            this.yearCB.SelectedIndexChanged += new System.EventHandler(this.yearCB_SelectedIndexChanged);
             // 
             // MonthlyRevenueAnalysis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(591, 381);
+            this.ClientSize = new System.Drawing.Size(730, 482);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MonthlyRevenueAnalysis";
-            this.Text = "MonthlyRevenueAnalysis";
+            this.Text = "RevenueAnalysis";
             this.Load += new System.EventHandler(this.MonthlyRevenueAnalysis_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chtData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,11 +151,8 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox yearCB;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox monthCB;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListBox listMonthly;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chtData;
+        private System.Windows.Forms.ComboBox yearCB;
     }
 }

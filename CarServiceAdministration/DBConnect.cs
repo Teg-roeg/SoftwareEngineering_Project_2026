@@ -1,5 +1,6 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using System;
+using System.Data;
 using System.IO;
 
 namespace CarServiceAdministration
@@ -31,6 +32,26 @@ namespace CarServiceAdministration
                 {
                     Console.WriteLine($"Error reading connection string: {ex.Message}");
                 }
+            }
+
+            public static DataSet ExecuteMultiRowQuery(string sql)
+            {
+                DataSet ds = new DataSet();
+
+                using (OracleConnection conn = new OracleConnection(connectionString))
+                {
+                    conn.Open();
+
+                    using (OracleCommand cmd = new OracleCommand(sql, conn))
+                    {
+                        using (OracleDataAdapter da = new OracleDataAdapter(cmd))
+                        {
+                            da.Fill(ds);
+                        }
+                    }
+                }
+
+                return ds;
             }
         }
     }

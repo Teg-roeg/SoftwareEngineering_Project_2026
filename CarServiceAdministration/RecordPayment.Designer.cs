@@ -39,7 +39,7 @@
             this.PayIDBox = new System.Windows.Forms.TextBox();
             this.rdbInvoice = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.paymentDatePicker = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -79,7 +79,7 @@
             this.groupBox1.Controls.Add(this.PayIDBox);
             this.groupBox1.Controls.Add(this.rdbInvoice);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.paymentDatePicker);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnConfirm);
             this.groupBox1.Controls.Add(this.label1);
@@ -162,14 +162,14 @@
             this.label4.TabIndex = 22;
             this.label4.Text = "Payment Date:";
             // 
-            // dateTimePicker1
+            // paymentDatePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(199, 241);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker1.MinDate = new System.DateTime(2025, 12, 7, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(365, 31);
-            this.dateTimePicker1.TabIndex = 21;
+            this.paymentDatePicker.Location = new System.Drawing.Point(199, 241);
+            this.paymentDatePicker.Margin = new System.Windows.Forms.Padding(2);
+            this.paymentDatePicker.MinDate = new System.DateTime(2025, 12, 7, 0, 0, 0, 0);
+            this.paymentDatePicker.Name = "paymentDatePicker";
+            this.paymentDatePicker.Size = new System.Drawing.Size(365, 31);
+            this.paymentDatePicker.TabIndex = 21;
             // 
             // label2
             // 
@@ -234,7 +234,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker paymentDatePicker;
         private System.Windows.Forms.RadioButton rdbInvoice;
         private System.Windows.Forms.TextBox PayIDBox;
         private System.Windows.Forms.Label label5;

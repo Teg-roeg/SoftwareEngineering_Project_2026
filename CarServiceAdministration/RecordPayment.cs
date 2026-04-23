@@ -81,7 +81,7 @@ namespace CarServiceAdministration
                     cmd.Parameters.Add(":payid", OracleDbType.Int32).Value = payID;
                     cmd.Parameters.Add(":invid", OracleDbType.Int32).Value = invID;
                     cmd.Parameters.Add(":amt", OracleDbType.Decimal).Value = amountPaid;
-                    cmd.Parameters.Add(":paydate", OracleDbType.TimeStamp).Value = DateTime.Now;
+                    cmd.Parameters.Add(":paydate", OracleDbType.TimeStamp).Value = paymentDatePicker.Value;
 
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Payment recorded successfully!");
