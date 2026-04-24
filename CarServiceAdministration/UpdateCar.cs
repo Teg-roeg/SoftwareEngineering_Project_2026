@@ -2,6 +2,7 @@
 using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace CarServiceAdministration
@@ -70,8 +71,7 @@ namespace CarServiceAdministration
         {
             try
             {
-                using (OracleConnection con =
-                    new OracleConnection(Database.connectionString))
+                using (OracleConnection con = new OracleConnection(Database.connectionString))
                 {
                     con.Open();
 
@@ -120,22 +120,58 @@ namespace CarServiceAdministration
         {
             if (selectedCar == null)
             {
-                MessageBox.Show("Please select a customer first.");
+                MessageBox.Show("Please select a car first.");
                 return;
             }
 
-            var confirmResult = MessageBox.Show(
-                "Update Car's Details?",
-                "Confirmation",
-                MessageBoxButtons.YesNo);
+            string regNum = regNumBox.Text.Trim();
+            string brand = brandBox.Text.Trim();
+            string model = modelBox.Text.Trim();
+            string yearText = yearBox.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(regNum))
+            {
+                MessageBox.Show("Registration number cannot be empty."); // checks for null regNUm
+                regNumBox.Focus();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(brand) || brand.Any(char.IsDigit)) // checks for null and if the name contain digit
+            {
+                MessageBox.Show("Brand cannot be empty or contain numbers.");
+                brandBox.Focus();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(model) || model.Any(char.IsDigit))
+            {
+                MessageBox.Show("Model cannot be empty or contain numbers.");
+                modelBox.Focus();
+                return;
+            }
+
+            if (!int.TryParse(yearText, out int year))
+            {
+                MessageBox.Show("Year must be a number."); // checks year input
+                yearBox.Focus();
+                return;
+            }
+
+            if (year < 1900 || year > DateTime.Now.Year)
+            {
+                MessageBox.Show("Year is not valid."); // checks if car is too old or time of year exceed current year
+                yearBox.Focus();
+                return;
+            }
+
+            var confirmResult = MessageBox.Show("Update Car's Details?","Confirmation",MessageBoxButtons.YesNo);
 
             if (confirmResult != DialogResult.Yes)
                 return;
 
             try
             {
-                using (OracleConnection con =
-                    new OracleConnection(Database.connectionString))
+                using (OracleConnection con = new OracleConnection(Database.connectionString))
                 {
                     con.Open();
 
@@ -149,20 +185,11 @@ namespace CarServiceAdministration
 
                     using (OracleCommand cmd = new OracleCommand(query, con))
                     {
-                        cmd.Parameters.Add(":regnum", OracleDbType.Varchar2).Value =
-                            regNumBox.Text;
-
-                        cmd.Parameters.Add(":brand", OracleDbType.Varchar2).Value =
-                            brandBox.Text;
-
-                        cmd.Parameters.Add(":model", OracleDbType.Varchar2).Value =
-                            modelBox.Text;
-
-                        cmd.Parameters.Add(":year", OracleDbType.Int32).Value =
-                            Convert.ToInt32(yearBox.Text);
-
-                        cmd.Parameters.Add(":id", OracleDbType.Int32).Value =
-                            selectedCar["CarID"];
+                        cmd.Parameters.Add(":regnum", OracleDbType.Varchar2).Value = regNum;
+                        cmd.Parameters.Add(":brand", OracleDbType.Varchar2).Value = brand;
+                        cmd.Parameters.Add(":model", OracleDbType.Varchar2).Value = model;
+                        cmd.Parameters.Add(":year", OracleDbType.Int32).Value = year;
+                        cmd.Parameters.Add(":id", OracleDbType.Int32).Value = selectedCar["CarID"];
 
                         cmd.ExecuteNonQuery();
                     }

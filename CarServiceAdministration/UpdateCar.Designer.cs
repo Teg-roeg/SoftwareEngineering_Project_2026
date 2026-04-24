@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateCar));
             this.cusBox = new System.Windows.Forms.GroupBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.grdCars = new System.Windows.Forms.DataGridView();
@@ -44,7 +45,6 @@
             this.CusID = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.cusBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdCars)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -74,6 +74,16 @@
             this.cusBox.TabIndex = 11;
             this.cusBox.TabStop = false;
             this.cusBox.Text = "Update Car Details";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(419, 16);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(155, 30);
+            this.btnSearch.TabIndex = 24;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // label3
             // 
@@ -208,16 +218,6 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.exitToolStripMenuItem.Text = "Back";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(419, 16);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(155, 30);
-            this.btnSearch.TabIndex = 24;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // UpdateCar
             // 
