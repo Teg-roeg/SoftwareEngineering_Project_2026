@@ -177,9 +177,12 @@ namespace CarServiceAdministration
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(txtBookingID.Text))
+            string bookingIdText = txtBookingID.Text.Trim();
+
+            if (!int.TryParse(bookingIdText, out int bookingId))
             {
-                MessageBox.Show("Please enter a Booking ID.");
+                MessageBox.Show("Booking ID must be a number.");
+                txtBookingID.Focus();
                 return;
             }
 
@@ -195,12 +198,19 @@ namespace CarServiceAdministration
                 return;
             }
 
-            var confirmResult = MessageBox.Show(
-                "Schedule booking for selected car?",
-                "Confirmation",
-                MessageBoxButtons.YesNo);
+            DateTime selectedDate = bookingDatePicker.Value;
 
-            if (confirmResult != DialogResult.Yes) return;
+            if (selectedDate < DateTime.Now)
+            {
+                MessageBox.Show("Booking date cannot be in the past.");
+                bookingDatePicker.Focus();
+                return;
+            }
+
+            var confirmResult = MessageBox.Show("Schedule booking for selected car?","Confirmation",MessageBoxButtons.YesNo);
+
+            if (confirmResult != DialogResult.Yes)
+                return;
 
             try
             {
@@ -213,12 +223,12 @@ namespace CarServiceAdministration
 
                     using (OracleCommand cmd = new OracleCommand(query, con))
                     {
-                        cmd.Parameters.Add(":bookid", OracleDbType.Int32).Value = Convert.ToInt32(txtBookingID.Text.Trim());
+                        cmd.Parameters.Add(":bookid", OracleDbType.Int32).Value = bookingId;
                         cmd.Parameters.Add(":cusid", OracleDbType.Int32).Value = Convert.ToInt32(selectedCar["CusID"]);
                         cmd.Parameters.Add(":carid", OracleDbType.Int32).Value = Convert.ToInt32(selectedCar["CarID"]);
                         cmd.Parameters.Add(":serid", OracleDbType.Int32).Value = Convert.ToInt32(serviceCB.SelectedValue);
                         cmd.Parameters.Add(":mechid", OracleDbType.Int32).Value = Convert.ToInt32(mechCB.SelectedValue);
-                        cmd.Parameters.Add(":datetime", OracleDbType.TimeStamp).Value = bookingDatePicker.Value;
+                        cmd.Parameters.Add(":datetime", OracleDbType.TimeStamp).Value = selectedDate;
 
                         int rows = cmd.ExecuteNonQuery();
 
@@ -228,7 +238,6 @@ namespace CarServiceAdministration
                             MessageBox.Show("Booking could not be added.");
                     }
                 }
-
 
                 txtBookingID.Clear();
                 selectedCar = null;
@@ -248,16 +257,6 @@ namespace CarServiceAdministration
             Form1 menu = new Form1();
             menu.Show();
             this.Close();
-        }
-
-        private void grdCars_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
