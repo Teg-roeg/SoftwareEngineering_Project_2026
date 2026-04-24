@@ -1,15 +1,8 @@
 ﻿using CarServiceAdministration.DBConnect;
 using Oracle.ManagedDataAccess.Client;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CarServiceAdministration
 {
@@ -38,7 +31,7 @@ namespace CarServiceAdministration
                         comboBox1.DataSource = dt;
                         comboBox1.DisplayMember = "MechID";
                         comboBox1.ValueMember = "MechID";
-                        comboBox1.SelectedIndex = -1;
+                        comboBox1.SelectedIndex = -1; // clears selection 
                     }
                 }
                 catch (Exception ex)
@@ -50,22 +43,19 @@ namespace CarServiceAdministration
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem == null || !(comboBox1.SelectedItem is DataRowView row))
+            if (comboBox1.SelectedItem == null || !(comboBox1.SelectedItem is DataRowView row)) // checks is selected item is not exist in datarow or null
                 return;
 
             listMechBox.Items.Clear();
 
-            listMechBox.Items.Add("Mechanic Id: " + row["MechID"]);
+            listMechBox.Items.Add("Mechanic Id: " + row["MechID"]); // Item appears in listBox
             listMechBox.Items.Add("Mechanic Name: " + row["Name"]);
             listMechBox.Items.Add("Phone Number: " + row["PhoneNum"]);
         }
 
         private void AddMechanic_Click(object sender, EventArgs e)
         {
-            var confirmResult = MessageBox.Show(
-                "Are you sure you want to remove data?",
-                "Confirmation",
-                MessageBoxButtons.YesNo);
+            var confirmResult = MessageBox.Show("Are you sure you want to remove data?","Confirmation",MessageBoxButtons.YesNo);
 
             if (confirmResult != DialogResult.Yes)
                 return;
@@ -98,8 +88,8 @@ namespace CarServiceAdministration
                             MessageBox.Show("Mechanic not found.");
                     }
 
-                    listMechBox.Items.Clear();
-                    comboBox1.SelectedIndex = -1;
+                    listMechBox.Items.Clear(); // clears items in listBox after removal
+                    comboBox1.SelectedIndex = -1; // resets selection, no item is selected
                 }
                 catch (Exception ex)
                 {
@@ -108,15 +98,11 @@ namespace CarServiceAdministration
             }
         }
 
-
         private void button1_Click(object sender, EventArgs e)
         {
-            var confirmResult = MessageBox.Show(
-                           "Are you sure you want to cancel?",
-                           "Confirmation",
-                           MessageBoxButtons.YesNo);
+            var confirmResult = MessageBox.Show("Are you sure you want to cancel?","Confirmation",MessageBoxButtons.YesNo);
 
-            if (confirmResult != DialogResult.Yes)
+            if (confirmResult != DialogResult.Yes) // whole code just cancel the selection
                 return;
 
             comboBox1.SelectedIndex = -1;
@@ -128,21 +114,6 @@ namespace CarServiceAdministration
             Form1 menu = new Form1();
             menu.Show();
             this.Close();
-        }
-
-        private void listMechBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listMechBox_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void mechBox_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -57,7 +57,6 @@
             this.mechBox.TabIndex = 7;
             this.mechBox.TabStop = false;
             this.mechBox.Text = "Remove Mechanic Details ";
-            this.mechBox.Enter += new System.EventHandler(this.mechBox_Enter);
             // 
             // button1
             // 
@@ -76,12 +75,10 @@
             // listMechBox
             // 
             this.listMechBox.ItemHeight = 19;
-            this.listMechBox.Location = new System.Drawing.Point(260, 46);
-            this.listMechBox.Margin = new System.Windows.Forms.Padding(2);
+            this.listMechBox.Location = new System.Drawing.Point(246, 22);
             this.listMechBox.Name = "listMechBox";
-            this.listMechBox.Size = new System.Drawing.Size(295, 99);
+            this.listMechBox.Size = new System.Drawing.Size(309, 118);
             this.listMechBox.TabIndex = 15;
-            this.listMechBox.SelectedIndexChanged += new System.EventHandler(this.listMechBox_SelectedIndexChanged_1);
             // 
             // comboBox1
             // 
