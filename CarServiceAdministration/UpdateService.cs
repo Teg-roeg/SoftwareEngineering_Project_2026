@@ -44,7 +44,6 @@ namespace CarServiceAdministration
             }
         }
 
-
         private void AddCar_Click(object sender, EventArgs e)
         {
             var confirmResult = MessageBox.Show("Update Service Job Details?", "Confirmation", MessageBoxButtons.YesNo);

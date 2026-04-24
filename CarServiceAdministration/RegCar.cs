@@ -2,6 +2,7 @@
 using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace CarServiceAdministration
@@ -42,12 +43,57 @@ namespace CarServiceAdministration
 
         private void AddCar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(CarIDBox.Text) ||
-                string.IsNullOrWhiteSpace(txtRegNum.Text) ||
-                string.IsNullOrWhiteSpace(txtBrand.Text) ||
-                CusIDBox.SelectedValue == null)
+            string carIdText = CarIDBox.Text.Trim();
+            string regNum = txtRegNum.Text.Trim();
+            string brand = txtBrand.Text.Trim();
+            string model = txtModel.Text.Trim();
+            string yearText = txtYear.Text.Trim();
+
+            if (!int.TryParse(carIdText, out int carId))
             {
-                MessageBox.Show("Please fill in all fields and select a Customer ID.");
+                MessageBox.Show("Car ID must be a number.");
+                CarIDBox.Focus();
+                return;
+            }
+
+            if (CusIDBox.SelectedValue == null)
+            {
+                MessageBox.Show("Please select a Customer ID.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(regNum))
+            {
+                MessageBox.Show("Registration number cannot be empty.");
+                txtRegNum.Focus();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(brand) || brand.Any(char.IsDigit))
+            {
+                MessageBox.Show("Brand cannot be empty or contain numbers.");
+                txtBrand.Focus();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(model) || model.Any(char.IsDigit))
+            {
+                MessageBox.Show("Model cannot be empty or contain numbers.");
+                txtModel.Focus();
+                return;
+            }
+
+            if (!int.TryParse(yearText, out int year))
+            {
+                MessageBox.Show("Year must be a number.");
+                txtYear.Focus();
+                return;
+            }
+
+            if (year < 1900 || year > DateTime.Now.Year)
+            {
+                MessageBox.Show("Year is not valid.");
+                txtYear.Focus();
                 return;
             }
 
@@ -64,22 +110,23 @@ namespace CarServiceAdministration
                 {
                     con.Open();
 
-                    string query = @"INSERT INTO Cars (CarID, CusID, RegNumber, Brand)
-                                     VALUES (:id, :cusid, :regnum, :brand)";
+                    string query = @"INSERT INTO Cars (CarID, CusID, RegNumber, Brand, Model, Year)
+                             VALUES (:id, :cusid, :regnum, :brand, :model, :year)";
 
                     using (OracleCommand cmd = new OracleCommand(query, con))
                     {
-                        cmd.Parameters.Add(":id", OracleDbType.Int32).Value = Convert.ToInt32(CarIDBox.Text);
+                        cmd.Parameters.Add(":id", OracleDbType.Int32).Value = carId;
                         cmd.Parameters.Add(":cusid", OracleDbType.Int32).Value = Convert.ToInt32(CusIDBox.SelectedValue);
-                        cmd.Parameters.Add(":regnum", OracleDbType.Varchar2).Value = txtRegNum.Text.Trim();
-                        cmd.Parameters.Add(":brand", OracleDbType.Varchar2).Value = txtBrand.Text.Trim();
+                        cmd.Parameters.Add(":regnum", OracleDbType.Varchar2).Value = regNum;
+                        cmd.Parameters.Add(":brand", OracleDbType.Varchar2).Value = brand;
+                        cmd.Parameters.Add(":model", OracleDbType.Varchar2).Value = model;
+                        cmd.Parameters.Add(":year", OracleDbType.Int32).Value = year;
 
                         cmd.ExecuteNonQuery();
                     }
 
                     MessageBox.Show("Car added successfully!");
 
-                    // -- Clear inputs --
                     CarIDBox.Clear();
                     txtRegNum.Clear();
                     txtBrand.Clear();
