@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegService));
             this.cusBox = new System.Windows.Forms.GroupBox();
+            this.euroLbl = new System.Windows.Forms.Label();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.AddCar = new System.Windows.Forms.Button();
             this.CusPhoneNum = new System.Windows.Forms.Label();
@@ -39,7 +40,6 @@
             this.CusID = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.euroLbl = new System.Windows.Forms.Label();
             this.cusBox.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -56,20 +56,29 @@
             this.cusBox.Controls.Add(this.CusID);
             this.cusBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cusBox.Location = new System.Drawing.Point(14, 25);
-            this.cusBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.cusBox.Margin = new System.Windows.Forms.Padding(1);
             this.cusBox.Name = "cusBox";
-            this.cusBox.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.cusBox.Padding = new System.Windows.Forms.Padding(1);
             this.cusBox.Size = new System.Drawing.Size(608, 328);
             this.cusBox.TabIndex = 8;
             this.cusBox.TabStop = false;
             this.cusBox.Text = "Enter Service Job Details";
-            this.cusBox.Enter += new System.EventHandler(this.cusBox_Enter);
+            // 
+            // euroLbl
+            // 
+            this.euroLbl.AutoSize = true;
+            this.euroLbl.Location = new System.Drawing.Point(267, 186);
+            this.euroLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.euroLbl.Name = "euroLbl";
+            this.euroLbl.Size = new System.Drawing.Size(19, 21);
+            this.euroLbl.TabIndex = 12;
+            this.euroLbl.Text = "€";
             // 
             // txtPrice
             // 
             this.txtPrice.ForeColor = System.Drawing.SystemColors.InfoText;
             this.txtPrice.Location = new System.Drawing.Point(199, 179);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(1);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(65, 28);
             this.txtPrice.TabIndex = 7;
@@ -82,7 +91,7 @@
             this.AddCar.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddCar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.AddCar.Location = new System.Drawing.Point(370, 236);
-            this.AddCar.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.AddCar.Margin = new System.Windows.Forms.Padding(1);
             this.AddCar.Name = "AddCar";
             this.AddCar.Size = new System.Drawing.Size(215, 53);
             this.AddCar.TabIndex = 6;
@@ -103,7 +112,7 @@
             // numSerBox
             // 
             this.numSerBox.Location = new System.Drawing.Point(199, 126);
-            this.numSerBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.numSerBox.Margin = new System.Windows.Forms.Padding(1);
             this.numSerBox.Name = "numSerBox";
             this.numSerBox.Size = new System.Drawing.Size(168, 28);
             this.numSerBox.TabIndex = 3;
@@ -121,11 +130,10 @@
             // SerIDBox
             // 
             this.SerIDBox.Location = new System.Drawing.Point(199, 76);
-            this.SerIDBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.SerIDBox.Margin = new System.Windows.Forms.Padding(1);
             this.SerIDBox.Name = "SerIDBox";
             this.SerIDBox.Size = new System.Drawing.Size(49, 28);
             this.SerIDBox.TabIndex = 1;
-            this.SerIDBox.TextChanged += new System.EventHandler(this.txtCarID_TextChanged);
             // 
             // CusID
             // 
@@ -160,16 +168,6 @@
             this.exitToolStripMenuItem.Text = "Back";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // euroLbl
-            // 
-            this.euroLbl.AutoSize = true;
-            this.euroLbl.Location = new System.Drawing.Point(267, 186);
-            this.euroLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.euroLbl.Name = "euroLbl";
-            this.euroLbl.Size = new System.Drawing.Size(19, 21);
-            this.euroLbl.TabIndex = 12;
-            this.euroLbl.Text = "€";
-            // 
             // RegService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -178,7 +176,7 @@
             this.Controls.Add(this.cusBox);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "RegService";
             this.Text = "RegService";
             this.cusBox.ResumeLayout(false);

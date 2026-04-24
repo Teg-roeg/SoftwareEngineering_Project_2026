@@ -2,6 +2,7 @@
 using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace CarServiceAdministration
@@ -43,14 +44,10 @@ namespace CarServiceAdministration
             }
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        
-        }
 
         private void AddCar_Click(object sender, EventArgs e)
         {
-            var confirmResult = MessageBox.Show("Update Service Job Details?","Confirmation",MessageBoxButtons.YesNo);
+            var confirmResult = MessageBox.Show("Update Service Job Details?", "Confirmation", MessageBoxButtons.YesNo);
 
             if (confirmResult != DialogResult.Yes)
                 return;
@@ -58,6 +55,30 @@ namespace CarServiceAdministration
             if (SerIDBox.SelectedItem == null || !(SerIDBox.SelectedItem is DataRowView row))
             {
                 MessageBox.Show("Please select a valid Service ID.");
+                return;
+            }
+
+            string name = nameSerBox.Text.Trim();
+            string priceText = priceSerBox.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(name) || name.Any(char.IsDigit))
+            {
+                MessageBox.Show("Service name cannot be empty or contain numbers.");
+                nameSerBox.Focus();
+                return;
+            }
+
+            if (!decimal.TryParse(priceText, out decimal price))
+            {
+                MessageBox.Show("Price must be a valid number.");
+                priceSerBox.Focus();
+                return;
+            }
+
+            if (price < 0)
+            {
+                MessageBox.Show("Price cannot be negative.");
+                priceSerBox.Focus();
                 return;
             }
 
@@ -70,13 +91,13 @@ namespace CarServiceAdministration
                     con.Open();
 
                     string query = @"UPDATE Services 
-                                     SET ServiceName = :name, Price = :price 
-                                     WHERE SerID = :id";
+                             SET ServiceName = :name, Price = :price 
+                             WHERE SerID = :id";
 
                     using (OracleCommand cmd = new OracleCommand(query, con))
                     {
-                        cmd.Parameters.Add(":name", OracleDbType.Varchar2).Value = nameSerBox.Text;
-                        cmd.Parameters.Add(":price", OracleDbType.Varchar2).Value = priceSerBox.Text;
+                        cmd.Parameters.Add(":name", OracleDbType.Varchar2).Value = name;
+                        cmd.Parameters.Add(":price", OracleDbType.Decimal).Value = price;
                         cmd.Parameters.Add(":id", OracleDbType.Int32).Value = serId;
 
                         int rows = cmd.ExecuteNonQuery();

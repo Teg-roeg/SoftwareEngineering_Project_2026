@@ -1,15 +1,8 @@
 ﻿using CarServiceAdministration.DBConnect;
 using Oracle.ManagedDataAccess.Client;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace CarServiceAdministration
 {
@@ -22,12 +15,41 @@ namespace CarServiceAdministration
 
         private void AddCar_Click(object sender, EventArgs e)
         {
-            var confirmResult = MessageBox.Show("Confirm Service Job Information?",
-                                     "Confirmation",
-                                     MessageBoxButtons.YesNo);
+            string idText = SerIDBox.Text.Trim();
+            string name = numSerBox.Text.Trim();
+            string priceText = txtPrice.Text.Trim();
+
+            if (!int.TryParse(idText, out int serId))
+            {
+                MessageBox.Show("Service ID must be a number.");
+                SerIDBox.Focus();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(name) || name.Any(char.IsDigit))
+            {
+                MessageBox.Show("Service name cannot be empty or contain numbers.");
+                numSerBox.Focus();
+                return;
+            }
+
+            if (!decimal.TryParse(priceText, out decimal price))
+            {
+                MessageBox.Show("Price must be a valid number.");
+                txtPrice.Focus();
+                return;
+            }
+
+            if (price < 0)
+            {
+                MessageBox.Show("Price cannot be negative.");
+                txtPrice.Focus();
+                return;
+            }
+
+            var confirmResult = MessageBox.Show("Confirm Service Job Information?", "Confirmation", MessageBoxButtons.YesNo);
             if (confirmResult == DialogResult.Yes)
             {
-
                 using (OracleConnection con = new OracleConnection(Database.connectionString))
                 {
                     try
@@ -39,15 +61,14 @@ namespace CarServiceAdministration
 
                         using (OracleCommand cmd = new OracleCommand(query, con))
                         {
-                            cmd.Parameters.Add(":id", OracleDbType.Int32).Value = Convert.ToInt32(SerIDBox.Text);
-                            cmd.Parameters.Add(":name", OracleDbType.Varchar2).Value = numSerBox.Text;
-                            cmd.Parameters.Add(":price", OracleDbType.Varchar2).Value = txtPrice.Text;
+                            cmd.Parameters.Add(":id", OracleDbType.Int32).Value = serId;
+                            cmd.Parameters.Add(":name", OracleDbType.Varchar2).Value = name;
+                            cmd.Parameters.Add(":price", OracleDbType.Decimal).Value = price;
 
                             cmd.ExecuteNonQuery();
                         }
 
                         MessageBox.Show("Service Job added successfully!");
-
 
                         SerIDBox.Clear();
                         numSerBox.Clear();
@@ -67,16 +88,6 @@ namespace CarServiceAdministration
             Form1 menu = new Form1();
             menu.Show();
             this.Close();
-        }
-
-        private void cusBox_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCarID_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
