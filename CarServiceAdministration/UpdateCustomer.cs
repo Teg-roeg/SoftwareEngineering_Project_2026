@@ -1,6 +1,7 @@
 ﻿using CarServiceAdministration.DBConnect;
 using System;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace CarServiceAdministration
@@ -22,9 +23,9 @@ namespace CarServiceAdministration
         {
             try
             {
-                DataTable dt = Customer.FindCustomers("");
+                DataTable dt = Customer.FindCustomers(""); // this is similair to the listBox but in this instance I have used gridBox instead
                 grdCustomers.DataSource = dt;
-                grdCustomers.Columns["CusID"].HeaderText = "Customer ID";
+                grdCustomers.Columns["CusID"].HeaderText = "Customer ID"; // adding titles to the columns
                 grdCustomers.Columns["Name"].HeaderText = "Name";
                 grdCustomers.Columns["PhoneNum"].HeaderText = "Phone Number";
             }
@@ -56,13 +57,37 @@ namespace CarServiceAdministration
                 return;
             }
 
-            var confirmResult = MessageBox.Show("Update Customer's Details?", "Confirmation",MessageBoxButtons.YesNo);
+            string name = nameCusBox.Text.Trim();
+            string phone = numCusBox.Text.Trim();
+
+            if (name.Any(char.IsDigit))
+            {
+                MessageBox.Show("Name cannot contain numbers.");
+                nameCusBox.Focus();
+                return;
+            }
+
+            if (!phone.All(char.IsDigit))
+            {
+                MessageBox.Show("Phone number must contain digits only.");
+                numCusBox.Focus();
+                return;
+            }
+
+            if (phone.Length < 10 || phone.Length > 10)
+            {
+                MessageBox.Show("Phone number cannot be more or less than 10 digits.");
+                numCusBox.Focus();
+                return;
+            }
+
+            var confirmResult = MessageBox.Show("Update Customer's Details?", "Confirmation", MessageBoxButtons.YesNo);
 
             if (confirmResult != DialogResult.Yes)
                 return;
 
-            customer.Name = nameCusBox.Text;
-            customer.PhoneNum = numCusBox.Text;
+            customer.Name = name;
+            customer.PhoneNum = phone;
 
             customer.UpdateCustomer();
 
@@ -72,50 +97,32 @@ namespace CarServiceAdministration
             numCusBox.Clear();
             customer = null;
 
-            LoadAllCustomers(); 
+            LoadAllCustomers();
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string searchName = txtSearch.Text.Trim();
-                DataTable dt = Customer.FindCustomers(searchName);
-
-                if (dt.Rows.Count == 0)
-                {
-                    MessageBox.Show("No customers found.");
+        private void btnSearch_Click(object sender, EventArgs e) 
+        { 
+            try { 
+                string searchName = txtSearch.Text.Trim(); 
+                DataTable dt = Customer.FindCustomers(searchName); 
+                
+                if (dt.Rows.Count == 0) 
+                { 
+                    MessageBox.Show("No customers found."); 
                     return;
-                }
-
-                grdCustomers.DataSource = dt;
-            }
-            catch (Exception ex)
-            {
+                } 
+                
+                grdCustomers.DataSource = dt; 
+            
+            } catch (Exception ex) { 
                 MessageBox.Show("Error searching customers: " + ex.Message);
-            }
+            } 
         }
-
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form1 menu = new Form1();
-            menu.Show();
-            this.Close();
-        }
-
-        private void grdCustomers_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void cusIDBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void grdCustomers_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e) 
+        { 
+            Form1 menu = new Form1(); 
+            menu.Show(); 
+            this.Close(); 
         }
     }
 }
