@@ -54,7 +54,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(554, 24);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // exitToolStripMenuItem
             // 
@@ -78,14 +77,13 @@
             this.cusBox.Controls.Add(this.CusID);
             this.cusBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cusBox.Location = new System.Drawing.Point(17, 42);
-            this.cusBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.cusBox.Margin = new System.Windows.Forms.Padding(1);
             this.cusBox.Name = "cusBox";
-            this.cusBox.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.cusBox.Padding = new System.Windows.Forms.Padding(1);
             this.cusBox.Size = new System.Drawing.Size(523, 309);
             this.cusBox.TabIndex = 7;
             this.cusBox.TabStop = false;
             this.cusBox.Text = "Update Mechanic Details";
-            this.cusBox.Enter += new System.EventHandler(this.cusBox_Enter);
             // 
             // label3
             // 
@@ -96,13 +94,12 @@
             this.label3.Size = new System.Drawing.Size(97, 20);
             this.label3.TabIndex = 12;
             this.label3.Text = "Mechanic ID:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // MechIDBox
             // 
             this.MechIDBox.FormattingEnabled = true;
             this.MechIDBox.Location = new System.Drawing.Point(199, 47);
-            this.MechIDBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.MechIDBox.Margin = new System.Windows.Forms.Padding(1);
             this.MechIDBox.Name = "MechIDBox";
             this.MechIDBox.Size = new System.Drawing.Size(68, 27);
             this.MechIDBox.TabIndex = 11;
@@ -114,7 +111,7 @@
             this.AddCar.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddCar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.AddCar.Location = new System.Drawing.Point(287, 226);
-            this.AddCar.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.AddCar.Margin = new System.Windows.Forms.Padding(1);
             this.AddCar.Name = "AddCar";
             this.AddCar.Size = new System.Drawing.Size(215, 53);
             this.AddCar.TabIndex = 6;
@@ -125,11 +122,10 @@
             // numMechBox
             // 
             this.numMechBox.Location = new System.Drawing.Point(199, 126);
-            this.numMechBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.numMechBox.Margin = new System.Windows.Forms.Padding(1);
             this.numMechBox.Name = "numMechBox";
             this.numMechBox.Size = new System.Drawing.Size(168, 24);
             this.numMechBox.TabIndex = 3;
-            this.numMechBox.TextChanged += new System.EventHandler(this.txtRegNum_TextChanged);
             // 
             // CusName
             // 
@@ -140,16 +136,14 @@
             this.CusName.Size = new System.Drawing.Size(115, 20);
             this.CusName.TabIndex = 2;
             this.CusName.Text = "Phone Number:";
-            this.CusName.Click += new System.EventHandler(this.CusName_Click);
             // 
             // nameMechBox
             // 
             this.nameMechBox.Location = new System.Drawing.Point(199, 87);
-            this.nameMechBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.nameMechBox.Margin = new System.Windows.Forms.Padding(1);
             this.nameMechBox.Name = "nameMechBox";
             this.nameMechBox.Size = new System.Drawing.Size(168, 24);
             this.nameMechBox.TabIndex = 1;
-            this.nameMechBox.TextChanged += new System.EventHandler(this.txtCarID_TextChanged);
             // 
             // CusID
             // 
@@ -160,7 +154,6 @@
             this.CusID.Size = new System.Drawing.Size(52, 20);
             this.CusID.TabIndex = 0;
             this.CusID.Text = "Name:";
-            this.CusID.Click += new System.EventHandler(this.CusID_Click);
             // 
             // UpdateMechanic
             // 
@@ -170,7 +163,7 @@
             this.Controls.Add(this.cusBox);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "UpdateMechanic";
             this.Text = "UpdateMechanic";
             this.Load += new System.EventHandler(this.UpdateMechanic_Load);

@@ -26,19 +26,43 @@ namespace CarServiceAdministration
             this.Close();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void addCustomer_Click(object sender, EventArgs e)
         {
-            var confirmResult = MessageBox.Show("Confirm Customer's Information?",
-                                     "Confirmation",
-                                     MessageBoxButtons.YesNo);
+            string name = txtName.Text.Trim();
+            string phone = txtPhone.Text.Trim();
+            string idText = txtCusID.Text.Trim();
+
+            if (!int.TryParse(idText, out int cusId))
+            {
+                MessageBox.Show("Customer ID must be a number."); // if customer id contains letters
+                txtCusID.Focus();
+                return;
+            }
+
+            if (name.Any(char.IsDigit))
+            {
+                MessageBox.Show("Name cannot contain numbers."); // if name contains any digits
+                txtName.Focus();
+                return;
+            }
+
+            if (!phone.All(char.IsDigit))
+            {
+                MessageBox.Show("Phone number must contain digits only."); // if phone contains any letters
+                txtPhone.Focus();
+                return;
+            }
+
+            if (phone.Length < 10 || phone.Length > 10)
+            {
+                MessageBox.Show("Phone number cannot be more or less than 10 digits."); // if the phone is less or more than 10 characters long
+                txtPhone.Focus();
+                return;
+            }
+
+            var confirmResult = MessageBox.Show("Confirm Customer's Information?", "Confirmation", MessageBoxButtons.YesNo);
             if (confirmResult == DialogResult.Yes)
             {
-
                 using (OracleConnection con = new OracleConnection(Database.connectionString))
                 {
                     try
@@ -50,15 +74,14 @@ namespace CarServiceAdministration
 
                         using (OracleCommand cmd = new OracleCommand(query, con))
                         {
-                            cmd.Parameters.Add(":id", OracleDbType.Int32).Value = Convert.ToInt32(txtCusID.Text);
-                            cmd.Parameters.Add(":name", OracleDbType.Varchar2).Value = txtName.Text;
-                            cmd.Parameters.Add(":phone", OracleDbType.Varchar2).Value = txtPhone.Text;
+                            cmd.Parameters.Add(":id", OracleDbType.Int32).Value = cusId;
+                            cmd.Parameters.Add(":name", OracleDbType.Varchar2).Value = name;
+                            cmd.Parameters.Add(":phone", OracleDbType.Varchar2).Value = phone;
 
                             cmd.ExecuteNonQuery();
                         }
 
                         MessageBox.Show("Customer added successfully!");
-
 
                         txtCusID.Clear();
                         txtName.Clear();
@@ -71,11 +94,6 @@ namespace CarServiceAdministration
                     }
                 }
             }
-        }
-
-        private void txtName_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

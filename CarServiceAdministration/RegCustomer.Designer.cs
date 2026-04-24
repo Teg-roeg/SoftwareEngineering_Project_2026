@@ -125,7 +125,6 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(168, 24);
             this.txtName.TabIndex = 3;
-            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // CusName
             // 
@@ -154,7 +153,6 @@
             this.CusID.Size = new System.Drawing.Size(95, 20);
             this.CusID.TabIndex = 0;
             this.CusID.Text = "Customer ID:";
-            this.CusID.Click += new System.EventHandler(this.label1_Click);
             // 
             // RegCustomer
             // 
